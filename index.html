@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AgriHealthAI — AI-powered guidance for smart agriculture, better food awareness and healthier everyday living. Fully bilingual (English &amp; हिन्दी).">
+  <title data-i18n="meta.title">AgriHealthAI — Smart Agriculture, Better Food, Healthier Choices</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%2321865B'/%3E%3Cpath d='M12 19c0-4 2.4-6.4 6.4-7.2-.8 4-3.2 6.4-6.4 7.2Z' fill='%23ffffff'/%3E%3Cpath d='M12 19c0-4-2.4-6.4-6.4-7.2.8 4 3.2 6.4 6.4 7.2Z' fill='%23DDF3E5'/%3E%3Crect x='11' y='4' width='2' height='7' rx='1' fill='%23ffffff'/%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div id="site-nav"></div>
+
+  <main id="main">
+    <section class="view active" data-view="home" id="view-home">
+      <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div>
+            <span class="eyebrow" data-i18n="home.statLangTitle"></span>
+            <h1 data-i18n-html="home.heroTitle"></h1>
+            <p class="lead" data-i18n="home.heroSub"></p>
+            <p class="hero__tagline-hi" data-i18n="home.heroHi"></p>
+            <div class="hero__cta">
+              <a class="btn btn--primary btn--lg" href="#agriculture" data-i18n="home.ctaPrimary"></a>
+              <a class="btn btn--secondary btn--lg" href="#about" data-i18n="home.ctaSecondary"></a>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1100&q=70"
+                 data-i18n-attr="alt:img.heroFarm" alt="" width="1100" height="880" fetchpriority="high">
+            <div class="hero__badge"><span class="dot"></span><span data-i18n="home.heroBadge"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="home.featuresEyebrow"></span>
+          <h2 data-i18n="home.featuresTitle"></h2>
+          <p class="lead" data-i18n="home.featuresSub"></p>
+        </div>
+        <div class="grid grid--3">
+          <article class="card reveal">
+            <img class="card__media" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=70"
+                 data-i18n-attr="alt:img.cardAgri" alt="" loading="lazy">
+            <div class="card__body">
+              <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21c0-6 4-9 9-9-1 6-5 9-9 9Z"/><path d="M12 21c0-6-4-9-9-9 1 6 5 9 9 9Z"/></svg></div>
+              <h3 data-i18n="home.f1Title"></h3>
+              <p data-i18n="home.f1Text"></p>
+              <a class="card__link" href="#agriculture"><span data-i18n="home.f1Cta"></span> &rarr;</a>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card__media" src="https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=800&q=70"
+                 data-i18n-attr="alt:img.cardFood" alt="" loading="lazy">
+            <div class="card__body">
+              <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18M3 12h4a4 4 0 0 0 4-4V3M7 12V3M17 21V3c-3 1-5 4-5 8 0 2 1 3 2 3h3Z"/></svg></div>
+              <h3 data-i18n="home.f2Title"></h3>
+              <p data-i18n="home.f2Text"></p>
+              <a class="card__link" href="#scanner"><span data-i18n="home.f2Cta"></span> &rarr;</a>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card__media" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=70"
+                 data-i18n-attr="alt:img.cardHealth" alt="" loading="lazy">
+            <div class="card__body">
+              <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg></div>
+              <h3 data-i18n="home.f3Title"></h3>
+              <p data-i18n="home.f3Text"></p>
+              <a class="card__link" href="#health"><span data-i18n="home.f3Cta"></span> &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="home.howEyebrow"></span>
+          <h2 data-i18n="home.howTitle"></h2>
+          <p class="lead" data-i18n="home.howSub"></p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="step__num"></div><h3 data-i18n="home.howStep1"></h3><p class="muted" data-i18n="home.howStep1Text"></p></div>
+          <div class="step reveal"><div class="step__num"></div><h3 data-i18n="home.howStep2"></h3><p class="muted" data-i18n="home.howStep2Text"></p></div>
+          <div class="step reveal"><div class="step__num"></div><h3 data-i18n="home.howStep3"></h3><p class="muted" data-i18n="home.howStep3Text"></p></div>
+          <div class="step reveal"><div class="step__num"></div><h3 data-i18n="home.howStep4"></h3><p class="muted" data-i18n="home.howStep4Text"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEMS ============ -->
+    <section class="section section--mint">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="home.problemsEyebrow"></span>
+          <h2 data-i18n="home.problemsTitle"></h2>
+          <p class="lead" data-i18n="home.problemsSub"></p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card reveal"><div class="card__body">
+            <div class="badge-row" style="margin-bottom:12px"><span class="badge">01</span></div>
+            <p data-i18n="home.prob1" style="margin:0"></p>
+          </div></div>
+          <div class="card reveal"><div class="card__body">
+            <div class="badge-row" style="margin-bottom:12px"><span class="badge">02</span></div>
+            <p data-i18n="home.prob2" style="margin:0"></p>
+          </div></div>
+          <div class="card reveal"><div class="card__body">
+            <div class="badge-row" style="margin-bottom:12px"><span class="badge">03</span></div>
+            <p data-i18n="home.prob3" style="margin:0"></p>
+          </div></div>
+          <div class="card reveal"><div class="card__body">
+            <div class="badge-row" style="margin-bottom:12px"><span class="badge">04</span></div>
+            <p data-i18n="home.prob4" style="margin:0"></p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORKFLOW ============ -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="home.workflowEyebrow"></span>
+          <h2 data-i18n="home.workflowTitle"></h2>
+          <p class="lead" data-i18n="home.workflowSub"></p>
+        </div>
+        <div class="flow reveal">
+          <div class="flow__node">
+            <img class="ic" style="object-fit:cover" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=400&q=70" data-i18n-attr="alt:img.workflowFarm" alt="" loading="lazy">
+            <h3 data-i18n="home.wfAgri"></h3><p class="muted" data-i18n="home.wfAgriText"></p>
+          </div>
+          <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+          <div class="flow__node">
+            <img class="ic" style="object-fit:cover" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=70" data-i18n-attr="alt:img.workflowFood" alt="" loading="lazy">
+            <h3 data-i18n="home.wfFood"></h3><p class="muted" data-i18n="home.wfFoodText"></p>
+          </div>
+          <div class="flow__arrow" aria-hidden="true">&rarr;</div>
+          <div class="flow__node">
+            <img class="ic" style="object-fit:cover" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=400&q=70" data-i18n-attr="alt:img.workflowHealth" alt="" loading="lazy">
+            <h3 data-i18n="home.wfHealth"></h3><p class="muted" data-i18n="home.wfHealthText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HONESTY ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--3">
+          <div class="card reveal"><div class="card__body">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 data-i18n="home.statSafeTitle"></h3><p data-i18n="home.statSafeText"></p>
+          </div></div>
+          <div class="card reveal"><div class="card__body">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+            <h3 data-i18n="home.statLangTitle"></h3><p data-i18n="home.statLangText"></p>
+          </div></div>
+          <div class="card reveal"><div class="card__body">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></div>
+            <h3 data-i18n="home.statHonestTitle"></h3><p data-i18n="home.statHonestText"></p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section section--mint">
+      <div class="container">
+        <div class="card reveal" style="overflow:hidden">
+          <div class="grid" style="grid-template-columns:1.1fr .9fr; gap:0">
+            <div class="card__body" style="padding:clamp(28px,5vw,52px)">
+              <h2 data-i18n="home.ctaTitle"></h2>
+              <p class="lead" data-i18n="home.ctaSub"></p>
+              <a class="btn btn--primary btn--lg" href="#agriculture" data-i18n="home.ctaBtn"></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=70"
+                 style="height:100%;object-fit:cover;min-height:260px" data-i18n-attr="alt:img.ctaField" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="view" data-view="agriculture" id="view-agriculture">
+      <!-- header -->
+    <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="nav.agriculture"></span>
+        <h1 data-i18n="agri.title"></h1>
+        <p class="lead" style="max-width:760px" data-i18n="agri.subtitle"></p>
+        <div class="notice notice--warn no-print" style="margin-top:18px;max-width:900px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <span data-i18n="agri.demoNotice"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="section section--white" id="form-section">
+      <div class="container">
+        <div class="section-head left">
+          <h2 data-i18n="agri.formTitle"></h2>
+          <p class="lead" data-i18n="agri.formSub"></p>
+        </div>
+
+        <form id="agri-form" novalidate>
+          <div class="form-grid">
+            <div class="field" data-field="state">
+              <label for="f-state" data-i18n="agri.state"></label>
+              <span class="hint" data-i18n="agri.stateHint"></span>
+              <select class="select" id="f-state" name="state" required></select>
+              <span class="field__err" data-i18n="agri.validation.state"></span>
+            </div>
+            <div class="field">
+              <label for="f-district" data-i18n="agri.district"></label>
+              <input class="input" id="f-district" name="district" type="text" autocomplete="address-level2" data-i18n-attr="placeholder:agri.districtPlaceholder">
+            </div>
+
+            <div class="field" data-field="landArea">
+              <label for="f-land" data-i18n="agri.landArea"></label>
+              <span class="hint" data-i18n="agri.landAreaHint"></span>
+              <input class="input" id="f-land" name="landArea" type="number" min="0.1" step="0.1" inputmode="decimal" placeholder="1" required>
+              <span class="field__err" data-i18n="agri.validation.land"></span>
+            </div>
+            <div class="field" data-field="unit">
+              <label for="f-unit" data-i18n="agri.unit"></label>
+              <select class="select" id="f-unit" name="unit" required></select>
+              <span class="field__err" data-i18n="agri.validation.unit"></span>
+            </div>
+
+            <div class="field" data-field="season">
+              <label for="f-season" data-i18n="agri.season"></label>
+              <span class="hint" data-i18n="agri.seasonHint"></span>
+              <select class="select" id="f-season" name="season" required></select>
+              <span class="field__err" data-i18n="agri.validation.season"></span>
+            </div>
+            <div class="field">
+              <label for="f-soil" data-i18n="agri.soil"></label>
+              <span class="hint" data-i18n="agri.soilHint"></span>
+              <select class="select" id="f-soil" name="soil"></select>
+            </div>
+
+            <div class="field" data-field="water">
+              <label for="f-water" data-i18n="agri.water"></label>
+              <span class="hint" data-i18n="agri.waterHint"></span>
+              <select class="select" id="f-water" name="water" required></select>
+              <span class="field__err" data-i18n="agri.validation.water"></span>
+            </div>
+            <div class="field" data-field="budget">
+              <label for="f-budget" data-i18n="agri.budget"></label>
+              <span class="hint" data-i18n="agri.budgetHint"></span>
+              <input class="input" id="f-budget" name="budget" type="number" min="0" step="100" inputmode="decimal" data-i18n-attr="placeholder:agri.budgetPlaceholder">
+              <span class="field__err" data-i18n="agri.validation.budget"></span>
+            </div>
+
+            <div class="field field--full" data-field="preferences">
+              <label data-i18n="agri.preference"></label>
+              <span class="hint" data-i18n="agri.preferenceHint"></span>
+              <div class="radio-cards" id="f-prefs"></div>
+              <span class="field__err" data-i18n="agri.validation.pref"></span>
+            </div>
+          </div>
+
+          <div class="flex-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+            <button class="btn btn--primary btn--lg" type="submit" id="agri-submit">
+              <span data-i18n="agri.submit"></span>
+            </button>
+            <button class="btn btn--secondary btn--lg" type="button" id="agri-reset" data-i18n="agri.resetForm"></button>
+          </div>
+          <p class="small muted" style="margin-top:10px" data-i18n="agri.submitHint"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section hidden" id="results-section">
+      <div class="container">
+        <div class="section-head left">
+          <div class="badge-row"><span class="badge badge--warn" data-i18n="common.demoBadge"></span></div>
+          <h2 style="margin-top:12px" data-i18n="agri.resultsTitle"></h2>
+          <p class="lead" data-i18n="agri.resultsSub"></p>
+          <p class="small muted" id="results-count"></p>
+        </div>
+        <div class="notice notice--info" style="margin-bottom:24px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <span><strong data-i18n="agri.assumptionsTitle"></strong> <span data-i18n="agri.assumptionsText"></span></span>
+        </div>
+        <div class="grid grid--3" id="crops-grid"></div>
+
+        <div class="section-head left" style="margin-top:44px" id="plan-anchor"></div>
+      </div>
+    </section>
+
+    <!-- PLAN -->
+    <section class="section section--white hidden" id="plan-section">
+      <div class="container">
+        <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px">
+          <button class="btn btn--secondary" type="button" id="plan-back">&larr; <span data-i18n="common.back"></span></button>
+          <span class="badge badge--warn" style="align-self:center" data-i18n="common.demoBadge"></span>
+        </div>
+        <div id="plan-content"></div>
+      </div>
+    </section>
+
+    <!-- COMPARE BAR -->
+    <div class="compare-bar" id="compare-bar">
+      <div class="container" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between">
+        <span class="small"><strong id="compare-count"></strong></span>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn--secondary btn--sm" type="button" id="compare-clear" data-i18n="agri.removeAllCompare"></button>
+          <button class="btn btn--primary btn--sm" type="button" id="compare-open" data-i18n="common.compareSelected"></button>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="view" data-view="scanner" id="view-scanner">
+      <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="nav.scanner"></span>
+        <h1 data-i18n="scanner.title"></h1>
+        <p class="lead" style="max-width:760px" data-i18n="scanner.subtitle"></p>
+
+        <div class="notice notice--danger" style="margin-top:18px;max-width:900px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <span><strong data-i18n="scanner.safetyTitle"></strong> <span data-i18n="scanner.safetyText"></span></span>
+        </div>
+        <div class="notice notice--warn" style="margin-top:12px;max-width:900px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <span data-i18n="scanner.demoNotice"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:30px;align-items:start">
+          <!-- LEFT: upload -->
+          <div>
+            <h2 data-i18n="scanner.uploadTitle"></h2>
+            <p class="hint" data-i18n="scanner.uploadHint"></p>
+
+            <div id="upload-area">
+              <div class="dropzone" id="dropzone" tabindex="0" role="button" data-i18n-attr="aria-label:scanner.chooseFile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>
+                <p style="margin:0 0 6px;font-weight:600" data-i18n="scanner.dropHere"></p>
+                <p class="small muted" style="margin:0 0 14px" data-i18n="scanner.uploadHint"></p>
+                <span class="btn btn--secondary btn--sm" data-i18n="scanner.chooseFile"></span>
+              </div>
+              <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" class="hidden">
+            </div>
+
+            <div id="preview-area" class="hidden">
+              <div class="preview-wrap">
+                <img id="preview-img" src="" alt="">
+              </div>
+              <div class="preview-actions">
+                <button class="btn btn--primary" type="button" id="analyse-btn" data-i18n="scanner.analyse"></button>
+                <button class="btn btn--secondary" type="button" id="replace-btn" data-i18n="scanner.replace"></button>
+                <button class="btn btn--danger" type="button" id="remove-btn" data-i18n="scanner.remove"></button>
+              </div>
+            </div>
+
+            <div id="analyse-loading" class="loading-block hidden">
+              <div class="spinner"></div>
+              <p data-i18n="scanner.analysing"></p>
+              <p class="small" data-i18n="scanner.analysingHint"></p>
+            </div>
+
+            <hr class="hr">
+            <h3 data-i18n="scanner.pickFoodPrompt"></h3>
+            <p class="hint" data-i18n="scanner.pickFoodHint"></p>
+            <div class="field">
+              <label for="food-search" data-i18n="scanner.confirmSelect"></label>
+              <input class="input" id="food-search" type="search" autocomplete="off" data-i18n-attr="placeholder:scanner.confirmPlaceholder">
+            </div>
+            <div id="food-suggestions" class="chip-row" style="margin-top:12px"></div>
+          </div>
+
+          <!-- RIGHT: results -->
+          <div id="result-column">
+            <div class="empty-state" id="result-empty" style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18M3 12h4a4 4 0 0 0 4-4V3M7 12V3M17 21V3c-3 1-5 4-5 8 0 2 1 3 2 3h3Z"/></svg>
+              <p data-i18n="scanner.resultTitle"></p>
+            </div>
+
+            <div id="analysis-result" class="hidden"></div>
+            <div id="nutrition-panel" class="hidden" style="margin-top:22px"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="view" data-view="health" id="view-health">
+      <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="nav.health"></span>
+        <h1 data-i18n="health.title"></h1>
+        <p class="lead" style="max-width:780px" data-i18n="health.subtitle"></p>
+        <div class="notice notice--danger" style="margin-top:18px;max-width:900px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <span><strong data-i18n="health.disclaimerTitle"></strong> <span data-i18n="health.disclaimerText"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:0">
+      <div class="container">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-tab="lifestyle" id="tab-lifestyle" aria-controls="panel-lifestyle" data-i18n="health.tabs.lifestyle"></button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="recovery" id="tab-recovery" aria-controls="panel-recovery" data-i18n="health.tabs.recovery"></button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="tracker" id="tab-tracker" aria-controls="panel-tracker" data-i18n="health.tabs.tracker"></button>
+        </div>
+
+        <!-- LIFESTYLE -->
+        <div role="tabpanel" id="panel-lifestyle" aria-labelledby="tab-lifestyle">
+          <h2 data-i18n="health.lifestyleTitle"></h2>
+          <p class="lead" data-i18n="health.lifestyleSub"></p>
+
+          <h3 style="margin-top:22px" data-i18n="health.chooseGoal"></h3>
+          <div class="radio-cards" id="goal-cards" style="max-width:620px"></div>
+
+          <div id="goal-guidance" style="margin-top:24px"></div>
+
+          <h3 style="margin-top:34px" data-i18n="health.coreHabits"></h3>
+          <div class="grid grid--3">
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core1Title"></h3><p class="muted" data-i18n="health.core1Text"></p></div></div>
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core2Title"></h3><p class="muted" data-i18n="health.core2Text"></p></div></div>
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core3Title"></h3><p class="muted" data-i18n="health.core3Text"></p></div></div>
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core4Title"></h3><p class="muted" data-i18n="health.core4Text"></p></div></div>
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core5Title"></h3><p class="muted" data-i18n="health.core5Text"></p></div></div>
+            <div class="card"><div class="card__body"><h3 data-i18n="health.core6Title"></h3><p class="muted" data-i18n="health.core6Text"></p></div></div>
+          </div>
+        </div>
+
+        <!-- RECOVERY -->
+        <div role="tabpanel" id="panel-recovery" class="hidden" aria-labelledby="tab-recovery">
+          <h2 data-i18n="health.recoveryTitle"></h2>
+          <p class="lead" data-i18n="health.recoverySub"></p>
+
+          <div class="form-grid" style="max-width:640px;align-items:end">
+            <div class="field">
+              <label for="junk-search" data-i18n="health.enterFood"></label>
+              <input class="input" id="junk-search" type="search" autocomplete="off" data-i18n-attr="placeholder:health.enterFoodPlaceholder">
+            </div>
+            <div class="field">
+              <button class="btn btn--primary" type="button" id="junk-find" data-i18n="health.findFood"></button>
+            </div>
+          </div>
+          <p class="hint" data-i18n="health.suggestionsTitle" style="margin-top:14px"></p>
+          <div class="chip-row" id="junk-suggestions"></div>
+
+          <div id="junk-result" style="margin-top:22px"></div>
+
+          <div class="notice notice--info" style="margin-top:24px;max-width:900px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            <span><strong data-i18n="health.recoveryTitle"></strong> <span data-i18n="health.recoveryNote"></span></span>
+          </div>
+          <div class="notice" style="margin-top:12px;max-width:900px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg>
+            <span data-i18n="health.safeNote"></span>
+          </div>
+        </div>
+
+        <!-- TRACKER -->
+        <div role="tabpanel" id="panel-tracker" class="hidden" aria-labelledby="tab-tracker">
+          <h2 data-i18n="health.trackerTitle"></h2>
+          <p class="lead" data-i18n="health.trackerSub"></p>
+          <div class="notice" style="margin-bottom:20px;max-width:900px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg>
+            <span data-i18n="health.trackerPrivacy"></span>
+          </div>
+
+          <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:26px;align-items:start">
+            <div>
+              <div class="card"><div class="card__body">
+                <h3 data-i18n="health.todayProgress"></h3>
+                <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px">
+                  <div class="stat" style="flex:none;min-width:120px"><span class="stat__label" data-i18n="health.todayProgress"></span><span class="stat__value" id="today-count">0/0</span></div>
+                  <div style="flex:1">
+                    <div class="progress-track"><span id="today-bar" style="width:0%"></span></div>
+                    <p class="small muted" id="today-msg" style="margin:8px 0 0"></p>
+                  </div>
+                </div>
+                <div id="habit-list"></div>
+              </div></div>
+            </div>
+
+            <div class="stack">
+              <div class="card"><div class="card__body">
+                <h3 data-i18n="health.weeklyProgress"></h3>
+                <div id="weekly-chart" style="display:flex;gap:8px;align-items:flex-end;height:130px;margin-top:8px"></div>
+                <p class="small muted" id="streak-text" style="margin-top:12px"></p>
+              </div></div>
+
+              <div class="card"><div class="card__body">
+                <h3 data-i18n="health.mealsReminders"></h3>
+                <ul class="small muted" style="margin:0">
+                  <li data-i18n="health.reminderBreakfast"></li>
+                  <li data-i18n="health.reminderWater"></li>
+                  <li data-i18n="health.reminderMeals"></li>
+                </ul>
+              </div></div>
+
+              <div class="card"><div class="card__body">
+                <h3 data-i18n="health.sleepRoutine"></h3>
+                <div class="field" style="margin-bottom:10px">
+                  <label for="sleep-bedtime" data-i18n="health.sleepBedtime"></label>
+                  <input class="input" id="sleep-bedtime" type="time">
+                </div>
+                <div class="field">
+                  <label for="sleep-hours" data-i18n="health.sleepHours"></label>
+                  <input class="input" id="sleep-hours" type="number" min="0" max="24" step="0.5">
+                </div>
+                <p class="small muted" style="margin-top:10px" data-i18n="health.savedLocal"></p>
+              </div></div>
+
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <button class="btn btn--secondary btn--sm" type="button" id="reset-day" data-i18n="health.resetDay"></button>
+                <button class="btn btn--danger btn--sm" type="button" id="clear-tracker" data-i18n="health.clearTracker"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="view" data-view="about" id="view-about">
+      <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="nav.about"></span>
+        <h1 data-i18n="about.title"></h1>
+        <p class="lead" style="max-width:780px" data-i18n="about.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:0">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:32px;align-items:center">
+          <div>
+            <h2 data-i18n="about.missionTitle"></h2>
+            <p class="lead" data-i18n="about.missionText"></p>
+          </div>
+          <img class="card__media" style="border-radius:var(--radius-lg);border:1px solid var(--border)"
+               src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=70"
+               data-i18n-attr="alt:img.aboutMission" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 data-i18n="about.visionTitle"></h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="card reveal"><div class="card__body"><h3 data-i18n="about.v1Title"></h3><p class="muted" data-i18n="about.v1Text"></p></div></div>
+          <div class="card reveal"><div class="card__body"><h3 data-i18n="about.v2Title"></h3><p class="muted" data-i18n="about.v2Text"></p></div></div>
+          <div class="card reveal"><div class="card__body"><h3 data-i18n="about.v3Title"></h3><p class="muted" data-i18n="about.v3Text"></p></div></div>
+          <div class="card reveal"><div class="card__body"><h3 data-i18n="about.v4Title"></h3><p class="muted" data-i18n="about.v4Text"></p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--mint">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+          <div>
+            <h2 data-i18n="about.techTitle"></h2>
+            <p class="lead" data-i18n="about.techText"></p>
+            <h3 style="margin-top:20px" data-i18n="about.statusTitle"></h3>
+            <div class="notice notice--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span data-i18n="about.statusDemo"></span></div>
+            <div class="notice notice--info" style="margin-top:10px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg><span data-i18n="about.statusReal"></span></div>
+          </div>
+          <div>
+            <h2 data-i18n="about.modulesTitle"></h2>
+            <p class="muted" data-i18n="about.modulesText"></p>
+            <div class="table-wrap">
+              <table>
+                <tbody>
+                  <tr><td><code>cropRecommendationService</code></td><td class="small muted">/api/crops/recommend</td></tr>
+                  <tr><td><code>cropPlanningService</code></td><td class="small muted">/api/crops/plan</td></tr>
+                  <tr><td><code>foodVisionService</code></td><td class="small muted">/api/food/analyze</td></tr>
+                  <tr><td><code>nutritionService</code></td><td class="small muted">/api/nutrition/:id</td></tr>
+                  <tr><td><code>healthGuidanceService</code></td><td class="small muted">educational content</td></tr>
+                  <tr><td><code>translationService</code></td><td class="small muted">i18n engine</td></tr>
+                  <tr><td><code>storageService</code></td><td class="small muted">localStorage (this browser)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="disclaimers">
+      <div class="container">
+        <div class="section-head left">
+          <h2 data-i18n="about.disclaimerTitle"></h2>
+          <p class="lead" data-i18n="about.disclaimerText"></p>
+        </div>
+        <div class="grid grid--3">
+          <div class="card"><div class="card__body"><span class="badge badge--warn">AGRICULTURE</span><p class="muted" style="margin-top:12px" data-i18n="disclaimers.agri"></p></div></div>
+          <div class="card"><div class="card__body"><span class="badge badge--warn">FOOD</span><p class="muted" style="margin-top:12px" data-i18n="disclaimers.food"></p></div></div>
+          <div class="card"><div class="card__body"><span class="badge badge--warn">HEALTH</span><p class="muted" style="margin-top:12px" data-i18n="disclaimers.health"></p></div></div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="view" data-view="contact" id="view-contact">
+      <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="nav.contact"></span>
+        <h1 data-i18n="contact.title"></h1>
+        <p class="lead" style="max-width:780px" data-i18n="contact.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:0">
+      <div class="container">
+        <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:32px;align-items:start">
+          <div>
+            <h2 data-i18n="contact.formTitle"></h2>
+            <form id="contact-form" novalidate>
+              <div class="form-grid">
+                <div class="field" data-field="name">
+                  <label for="c-name" data-i18n="contact.name"></label>
+                  <input class="input" id="c-name" name="name" type="text" autocomplete="name" data-i18n-attr="placeholder:contact.namePlaceholder" required>
+                  <span class="field__err" data-i18n="contact.validation.name"></span>
+                </div>
+                <div class="field" data-field="email">
+                  <label for="c-email" data-i18n="contact.email"></label>
+                  <input class="input" id="c-email" name="email" type="email" autocomplete="email" data-i18n-attr="placeholder:contact.emailPlaceholder" required>
+                  <span class="field__err" data-i18n="contact.validation.email"></span>
+                </div>
+                <div class="field field--full" data-field="topic">
+                  <label for="c-topic" data-i18n="contact.topic"></label>
+                  <select class="select" id="c-topic" name="topic" required></select>
+                  <span class="field__err" data-i18n="contact.validation.topic"></span>
+                </div>
+                <div class="field field--full" data-field="message">
+                  <label for="c-message" data-i18n="contact.message"></label>
+                  <textarea class="textarea" id="c-message" name="message" data-i18n-attr="placeholder:contact.messagePlaceholder" required></textarea>
+                  <span class="field__err" data-i18n="contact.validation.message"></span>
+                </div>
+              </div>
+              <button class="btn btn--primary btn--lg" type="submit" id="contact-send" style="margin-top:22px">
+                <span data-i18n="contact.send"></span>
+              </button>
+              <p class="small muted" style="margin-top:10px" data-i18n="contact.privacyNote"></p>
+            </form>
+          </div>
+          <div class="stack">
+            <div class="card"><div class="card__body">
+              <h3 data-i18n="contact.infoTitle"></h3>
+              <p class="muted" data-i18n="contact.infoText"></p>
+              <div class="notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="contact.infoPlaceholder"></span></div>
+            </div></div>
+            <div class="card"><div class="card__body">
+              <h3 data-i18n="contact.faqTitle"></h3>
+              <details class="acc"><summary class="acc__head"><span data-i18n="contact.faq1Q"></span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="acc__body"><p data-i18n="contact.faq1A"></p></div></details>
+              <details class="acc"><summary class="acc__head"><span data-i18n="contact.faq2Q"></span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="acc__body"><p data-i18n="contact.faq2A"></p></div></details>
+              <details class="acc"><summary class="acc__head"><span data-i18n="contact.faq3Q"></span><svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="acc__body"><p data-i18n="contact.faq3A"></p></div></details>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <section class="view" data-view="privacy" id="view-privacy">
+      <section class="section section--tight" style="padding-top:38px">
+      <div class="container">
+        <span class="eyebrow" data-i18n="footer.privacy"></span>
+        <h1 data-i18n="privacy.title"></h1>
+        <p class="lead" style="max-width:780px" data-i18n="privacy.subtitle"></p>
+      </div>
+    </section>
+
+    <section class="section section--white" style="padding-top:0">
+      <div class="container" style="max-width:820px">
+        <div class="stack">
+          <div><h2 data-i18n="privacy.s1Title"></h2><p class="muted" data-i18n="privacy.s1Text"></p></div>
+          <div><h2 data-i18n="privacy.s2Title"></h2><p class="muted" data-i18n="privacy.s2Text"></p></div>
+          <div><h2 data-i18n="privacy.s3Title"></h2><p class="muted" data-i18n="privacy.s3Text"></p></div>
+          <div><h2 data-i18n="privacy.s5Title"></h2><p class="muted" data-i18n="privacy.s5Text"></p></div>
+          <div>
+            <h2 data-i18n="privacy.s4Title"></h2>
+            <p class="muted" data-i18n="privacy.s4Text"></p>
+            <button class="btn btn--danger" type="button" id="clear-local" data-i18n="privacy.clearLocal"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="toast-root"></div>
+
+  <!-- Single application script: all modules + router (no build step). -->
+  <script defer src="app.js"></script>
+</body>
+</html>
