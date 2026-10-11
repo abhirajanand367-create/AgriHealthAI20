@@ -3381,6 +3381,7 @@ window.I18N = {
           '</div>' +
           '<div class="footer__bottom">' +
             '<span data-i18n="footer.rights"></span>' +
+            '<span class="footer__credit"><strong>Made by ABHIRAJ and Samir</strong></span>' +
             '<span>&copy; <span id="footer-year"></span> AgriHealthAI</span>' +
           '</div>' +
         '</div>' +

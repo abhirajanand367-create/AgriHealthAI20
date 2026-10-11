@@ -230,11 +230,11 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 
 /* ---------- Cards ---------- */
 .grid { display: grid; gap: 22px; }
-.grid--2 { grid-template-columns: repeat(2, 1fr); }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-.grid--4 { grid-template-columns: repeat(4, 1fr); }
-@media (max-width: 980px) { .grid--4 { grid-template-columns: repeat(2, 1fr); } .grid--3 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 620px) { .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; } }
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 980px) { .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .grid--2, .grid--3, .grid--4 { grid-template-columns: minmax(0, 1fr); } }
 
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
@@ -267,7 +267,10 @@ ul, ol { margin: 0 0 1em; padding-left: 1.2em; }
 .flow__node .ic { width: 60px; height: 60px; margin: 0 auto 14px; border-radius: 18px; display: grid; place-items: center; background: var(--green-100); color: var(--green-800); }
 .flow__node .ic svg { width: 30px; height: 30px; }
 .flow__arrow { display: grid; place-items: center; color: var(--green-500); font-size: 1.6rem; padding: 0 4px; }
-@media (max-width: 700px) { .flow__arrow { transform: rotate(90deg); } }
+@media (max-width: 700px) {
+  .flow { flex-direction: column; }
+  .flow__arrow { transform: rotate(90deg); align-self: center; }
+}
 
 /* ---------- Badges / pills ---------- */
 .badge {
@@ -496,6 +499,60 @@ tr:last-child td { border-bottom: 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- Credits (bold author credit) ---------- */
+.credit-line {
+  margin: 22px 0 0;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  color: var(--green-800);
+}
+.credit-line strong { font-weight: 800; }
+.footer__credit { font-weight: 800; color: #fff; }
+.footer__credit strong { font-weight: 800; }
+
+/* ======================================================================
+   Mobile / phone polish (touch-friendly, no accidental zoom, no overflow)
+   ====================================================================== */
+html { -webkit-tap-highlight-color: transparent; }
+
+/* 16px form controls prevent iOS Safari from zooming on focus */
+@media (max-width: 768px) {
+  .input, .select, .textarea { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+  /* comfortable tap targets */
+  .btn { min-height: 46px; padding-block: 12px; }
+  .btn--sm { min-height: 40px; }
+  .nav-toggle { width: 46px; height: 46px; }
+  .chip { padding: 10px 16px; font-size: .9rem; }
+  .tab { padding: 14px 14px; }
+  .radio-card { padding: 14px; }
+
+  /* keep long tables/timelines from forcing sideways scroll */
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .tabs { -webkit-overflow-scrolling: touch; }
+
+  /* tighter, still readable sections on small screens */
+  .container { padding-inline: 16px; }
+  .section { padding: 40px 0; }
+  .card__body { padding: 18px; }
+}
+
+/* Stack inline two-column grids (CTAs, plan header, about/health panels) */
+@media (max-width: 620px) {
+  .grid[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
+}
+
+/* Very small phones: stack any inline action rows cleanly */
+@media (max-width: 420px) {
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { width: 100%; }
+  .modal__actions { flex-direction: column-reverse; }
+  .modal__actions .btn { width: 100%; }
+  #toast-root { left: 12px; right: 12px; bottom: 12px; max-width: none; }
 }
 
 
