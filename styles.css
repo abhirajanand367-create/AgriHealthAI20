@@ -555,6 +555,162 @@ html { -webkit-tap-highlight-color: transparent; }
   #toast-root { left: 12px; right: 12px; bottom: 12px; max-width: none; }
 }
 
+/* ==========================================================================
+   Crop disease screening, official data & SVG charts
+   ========================================================================== */
+
+.text-link {
+  font-weight: 600; color: var(--green-700);
+  border-bottom: 1px solid var(--green-100); padding-bottom: 1px;
+}
+.text-link:hover { text-decoration: none; border-color: var(--green-500); }
+
+/* ---------- charts ---------- */
+.chart-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-sm);
+}
+.chart-card__head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 18px; margin-bottom: 14px; flex-wrap: wrap;
+}
+.chart-card__head h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.chart-card__head p { margin: 0; max-width: 560px; }
+.chart-keys { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.chart-key { display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; color: var(--text-muted); font-weight: 600; }
+.legend-swatch {
+  width: 16px; height: 8px; border-radius: 4px; display: inline-block;
+  background: linear-gradient(90deg, var(--green-800), var(--green-500));
+}
+.legend-pin {
+  width: 4px; height: 14px; border-radius: 2px; background: #fff;
+  border: 1px solid var(--green-800); display: inline-block;
+}
+.chart-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.chart-svg { width: 100%; height: auto; min-width: 460px; display: block; }
+.chart-wrap--fit .chart-svg { min-width: 0; }
+.chart-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 22px; margin-top: 22px; align-items: start;
+}
+@media (max-width: 900px) { .chart-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- official KPI cards ---------- */
+.kpi-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 8px 0 22px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--green-100);
+  border-radius: var(--radius); padding: 15px 15px 13px; box-shadow: var(--shadow-xs);
+}
+.kpi--primary { border-top-color: var(--green-600); background: linear-gradient(180deg, var(--green-50), #fff 72%); }
+.kpi__label {
+  display: block; font-size: .68rem; font-weight: 800; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
+}
+.kpi__value { display: block; font-size: 1.42rem; font-weight: 800; color: var(--green-800); line-height: 1.1; }
+.kpi__value small { font-size: .62em; font-weight: 700; color: var(--text-muted); margin-left: 3px; }
+.kpi__sub { display: block; font-size: .72rem; color: var(--text-soft); margin-top: 5px; }
+@media (max-width: 980px) { .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 620px) {
+  .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi--primary { grid-column: 1 / -1; }
+}
+
+/* ---------- official sources ---------- */
+.data-source-card {
+  margin-top: 22px; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px 22px;
+}
+.data-source-card__head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; flex-wrap: wrap; margin-bottom: 10px;
+}
+.data-source-card__head h3 { margin: 0; font-size: 1rem; }
+.source-list { margin: 0; padding-left: 18px; }
+.source-list li { margin-bottom: 6px; font-size: .85rem; }
+.source-list a { color: var(--green-700); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+
+/* ---------- food visual status ---------- */
+.status-banner {
+  display: flex; gap: 12px; align-items: flex-start; border-radius: var(--radius);
+  padding: 14px 16px; border: 1px solid; margin-top: 6px;
+}
+.status-banner svg { width: 26px; height: 26px; flex: 0 0 26px; margin-top: 1px; }
+.status-banner strong { display: block; font-size: .98rem; }
+.status-banner--clear { background: var(--green-50); border-color: var(--green-100); color: var(--green-800); }
+.status-banner--clear svg { color: var(--green-600); }
+.status-banner--check { background: var(--amber-100); border-color: #f3d9a8; color: #7a4d0b; }
+.status-banner--check svg { color: var(--amber-500); }
+.status-banner--unknown { background: #f4f6f5; border-color: var(--border); color: var(--text-muted); }
+.status-banner--unknown svg { color: var(--text-soft); }
+
+.photo-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.photo-stat { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 9px 10px; }
+.photo-stat span {
+  display: block; font-size: .66rem; font-weight: 800; letter-spacing: .03em;
+  text-transform: uppercase; color: var(--text-soft);
+}
+.photo-stat strong { display: block; font-size: 1.05rem; color: var(--green-800); margin-top: 2px; }
+.photo-stat small { font-size: .7rem; color: var(--text-muted); margin-left: 2px; }
+@media (max-width: 620px) { .photo-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.checklist-card {
+  background: var(--green-50); border: 1px solid var(--green-100);
+  border-radius: var(--radius); padding: 16px 18px; margin: 16px 0;
+}
+.checklist-card h4 { margin: 0 0 8px; font-size: .95rem; color: var(--green-800); }
+.check-list { margin: 0; padding-left: 18px; }
+.check-list li { font-size: .85rem; color: var(--text-muted); margin-bottom: 5px; }
+
+/* ---------- crop disease screening ---------- */
+.possible-list { display: grid; gap: 10px; margin: 10px 0 14px; }
+.possible-item {
+  display: flex; gap: 10px; align-items: flex-start; background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
+}
+.possible-item .kind { flex: 0 0 auto; margin-top: 2px; }
+
+.kind {
+  display: inline-block; font-size: .64rem; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: var(--radius-pill); white-space: nowrap;
+}
+.kind--fungal { background: #efe9f7; color: #5b3f8a; }
+.kind--bacterial { background: #e6f2fb; color: #245f8c; }
+.kind--viral { background: #fde9ef; color: #9c2f52; }
+.kind--insect { background: var(--amber-100); color: #875312; }
+.kind--disorder { background: #eef1ef; color: var(--text-muted); }
+
+.dz-consult {
+  margin: 6px 0 0; color: #7a4d0b; background: var(--amber-100);
+  border-radius: 10px; padding: 10px 12px;
+}
+
+.symptom-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 12px 0 14px; }
+.check-item {
+  display: flex; gap: 9px; align-items: flex-start; border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px; cursor: pointer; font-size: .86rem; background: #fff;
+  transition: border-color .15s, background .15s;
+}
+.check-item:hover { border-color: var(--green-500); }
+.check-item input { margin-top: 3px; accent-color: var(--green-600); flex: 0 0 auto; }
+.check-item.checked { border-color: var(--green-600); background: var(--green-50); }
+@media (max-width: 620px) { .symptom-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.disease-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 18px; box-shadow: var(--shadow-xs); margin-bottom: 12px;
+}
+.disease-card--top { border-color: var(--green-500); box-shadow: 0 0 0 3px var(--green-50); }
+.disease-card__head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.disease-card__head h4 { margin: 0; font-size: 1rem; flex: 1 1 auto; }
+.match-pill {
+  font-size: .7rem; font-weight: 800; letter-spacing: .03em; padding: 4px 9px;
+  border-radius: var(--radius-pill); background: var(--green-100); color: var(--green-800); white-space: nowrap;
+}
+.match-pill--top { background: var(--green-600); color: #fff; }
+.match-pill--muted { background: #eef1ef; color: var(--text-muted); font-weight: 700; }
+.step-list { margin: 10px 0 0; padding-left: 20px; }
+.step-list li { margin-bottom: 7px; }
+
 
 /* ======================================================================
    Single-file app: view switching (one document, hash routing)

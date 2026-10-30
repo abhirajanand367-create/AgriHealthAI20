@@ -656,6 +656,657 @@ window.AGRI_CONFIG = {
   ];
 
   /* ----------------------------------------------------------------------
+   * CROP DISEASE / DISORDER REFERENCE
+   * General, educational descriptions of common crop problems with safe,
+   * non-chemical-first recovery steps. NO chemical doses are given — always
+   * confirm diagnosis and any treatment with the local KVK / extension
+   * officer. A photo + symptom checklist is a screening aid, not a lab test.
+   * -------------------------------------------------------------------- */
+  var pair = function (en, hi) { return { en: en, hi: hi }; };
+
+  var CROP_DISEASES = [
+    /* ---------------- RICE ---------------- */
+    {
+      id: "rice-blast", crops: ["rice"], kind: "fungal",
+      name: pair("Rice blast", "धान का झुलसा (ब्लास्ट)"),
+      sign: pair("Spindle- or diamond-shaped grey spots with brown margins on leaves; the neck/panicle may blacken and break.", "पत्तियों पर भूरे किनारे वाले तकली/हीरे के आकार के स्लेटी धब्बे; गर्दन/बाली काली होकर टूट सकती है।"),
+      symptoms: [
+        pair("Diamond- or spindle-shaped leaf spots", "तकली/हीरे के आकार के पत्ती धब्बे"),
+        pair("Grey centre with a dark brown edge", "स्लेटी केंद्र व गहरा भूरा किनारा"),
+        pair("Neck or panicle blackens and breaks", "गर्दन या बाली काली होकर टूटना")
+      ],
+      recovery: [
+        pair("Remove and destroy badly infected leaves and panicles; do not add them to compost.", "गंभीर रूप से संक्रमित पत्तियाँ व बालियाँ हटाकर नष्ट करें; कंपोस्ट में न डालें।"),
+        pair("Avoid excess nitrogen and keep good drainage and open spacing.", "अधिक नाइट्रोजन से बचें; जल निकास व खुली दूरी रखें।"),
+        pair("Grow a blast-resistant variety next season and use certified, treated seed.", "अगली बार रोग-प्रतिरोधी किस्म लगाएँ और प्रमाणित उपचारित बीज लें।"),
+        pair("Ask your KVK to confirm the disease and advise any approved fungicide — never guess doses.", "रोग की पुष्टि व स्वीकृत फफूंदनाशी की सलाह हेतु KVK से पूछें — अनुमान से मात्रा न लें।")
+      ],
+      prevention: [
+        pair("Use resistant varieties and balanced nutrition.", "प्रतिरोधी किस्में व संतुलित पोषण अपनाएँ।"),
+        pair("Avoid dense sowing and long periods of leaf wetness.", "घनी बुवाई व पत्तियों के लंबे समय तक गीले रहने से बचें।")
+      ]
+    },
+    {
+      id: "rice-bacterial-blight", crops: ["rice"], kind: "bacterial",
+      name: pair("Bacterial leaf blight", "जीवाणु पत्ती झुलसा"),
+      sign: pair("Water-soaked yellow-white lesions along leaf edges; seedlings may wilt; milky ooze may appear early in the morning.", "पत्ती के किनारों पर पानी जैसे पीले-सफेद धब्बे; पौधे मुरझा सकते हैं; सुबह दूधिया स्राव दिख सकता है।"),
+      symptoms: [
+        pair("Leaf edges turn yellow/white and dry", "पत्ती के किनारे पीले/सफेद होकर सूखना"),
+        pair("Water-soaked streaks on leaves", "पत्तियों पर पानी जैसी धारियाँ"),
+        pair("Seedlings wilt or die in patches", "पौधे मुरझाना या धब्बों में मरना")
+      ],
+      recovery: [
+        pair("Drain standing water and stop water moving between fields.", "खड़ा पानी निकालें और खेतों के बीच पानी का बहाव रोकें।"),
+        pair("Remove infected stubble; clean tools before moving to another field.", "संक्रमित ठूँठ हटाएँ; दूसरे खेत में जाने से पहले औज़ार साफ़ करें।"),
+        pair("Reduce nitrogen and keep nutrition balanced.", "नाइट्रोजन कम करें और पोषण संतुलित रखें।"),
+        pair("Consult your KVK about approved management and resistant varieties.", "स्वीकृत प्रबंधन व प्रतिरोधी किस्मों के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Use clean seed and resistant varieties.", "साफ़ बीज व प्रतिरोधी किस्में उपयोग करें।"),
+        pair("Avoid excess water and plant injury.", "अधिक पानी व पौधों को चोट से बचाएँ।")
+      ]
+    },
+    /* ---------------- WHEAT ---------------- */
+    {
+      id: "wheat-yellow-rust", crops: ["wheat"], kind: "fungal",
+      name: pair("Yellow (stripe) rust", "पीला रतुआ"),
+      sign: pair("Bright yellow-orange powdery stripes on leaves; spores rub off on fingers.", "पत्तियों पर चमकीली पीली-नारंगी पाउडर जैसी धारियाँ; उँगली पर पाउडर लगता है।"),
+      symptoms: [
+        pair("Yellow/orange stripes on leaves", "पत्तियों पर पीली/नारंगी धारियाँ"),
+        pair("Yellow powder rubs off", "पीला पाउडर उँगली पर लगना"),
+        pair("Stunted plants or shrivelled grain", "पौधे बौने या दाना सिकुड़ना")
+      ],
+      recovery: [
+        pair("Remove volunteer wheat and infected crop debris.", "स्वयं उगे गेहूँ व संक्रमित फसल अवशेष हटाएँ।"),
+        pair("Avoid excess nitrogen and very late sowing.", "अधिक नाइट्रोजन व बहुत देर से बुवाई से बचें।"),
+        pair("Grow rust-resistant varieties next season.", "अगली बार रतुआ-प्रतिरोधी किस्में लगाएँ।"),
+        pair("Report it to your KVK and follow the local rust advisory; do not spray by guess.", "KVK को बताएँ और स्थानीय रतुआ सलाह मानें; अनुमान से छिड़काव न करें।")
+      ],
+      prevention: [
+        pair("Resistant varieties, timely sowing and balanced nutrition.", "प्रतिरोधी किस्में, समय पर बुवाई व संतुलित पोषण।"),
+        pair("Scout fields weekly during cool, moist weather.", "ठंडे, नम मौसम में साप्ताहिक निगरानी करें।")
+      ]
+    },
+    {
+      id: "wheat-loose-smut", crops: ["wheat"], kind: "fungal",
+      name: pair("Loose smut", "गेहूँ का कंडवा (लूज़ स्मट)"),
+      sign: pair("The ear is replaced by a black powdery mass; grains are destroyed.", "बाली की जगह काला पाउडर भर जाता है; दाने नष्ट हो जाते हैं।"),
+      symptoms: [
+        pair("Black powder in place of grain", "दाने की जगह काला पाउडर"),
+        pair("Ear looks loose and black", "बाली ढीली व काली दिखना"),
+        pair("Smutty smell at flowering", "फूल के समय कंडवे जैसी गंध")
+      ],
+      recovery: [
+        pair("Bag and remove smutted ears carefully before they burst open.", "फटने से पहले कंडवा वाली बालियाँ थैली में हटाएँ।"),
+        pair("Clean the threshing floor and equipment afterwards.", "बाद में मड़ाई स्थल व औज़ार साफ़ करें।"),
+        pair("Use certified, treated seed next season.", "अगली बार प्रमाणित उपचारित बीज लें।"),
+        pair("Ask your KVK about suitable seed treatment.", "उपयुक्त बीजोपचार के लिए KVK से पूछें।")
+      ],
+      prevention: [
+        pair("Certified treated seed and crop rotation.", "प्रमाणित उपचारित बीज व फसल चक्र।"),
+        pair("Do not save seed from an infected field.", "संक्रमित खेत का बीज न रखें।")
+      ]
+    },
+    /* ---------------- MAIZE ---------------- */
+    {
+      id: "maize-fall-armyworm", crops: ["maize"], kind: "insect",
+      name: pair("Fall armyworm", "फॉल आर्मीवर्म (सूंडी)"),
+      sign: pair("Ragged holes in young leaves, damaged whorls and moist sawdust-like frass.", "छोटी पत्तियों में फटे छेद, भुट्टे का घेरा खराब और गीला बुरादा जैसा मल।"),
+      symptoms: [
+        pair("Ragged holes in young leaves", "छोटी पत्तियों में फटे छेद"),
+        pair("Sawdust-like frass in the whorl", "घेरे में बुरादे जैसा मल"),
+        pair("Caterpillars inside the whorl or cob", "घेरे या भुट्टे में सूंडियाँ")
+      ],
+      recovery: [
+        pair("Hand-pick larvae and destroy egg masses in small fields.", "छोटे खेतों में सूंडियाँ हाथ से हटाएँ और अंडों के गुच्छे नष्ट करें।"),
+        pair("Put clean sand or ash in the whorl of young plants (traditional, low-risk).", "छोटे पौधों के घेरे में साफ़ रेत या राख डालें (पारंपरिक, कम जोखिम)।"),
+        pair("Encourage birds and natural enemies; avoid broad-spectrum sprays.", "पक्षियों व प्राकृतिक शत्रुओं को बढ़ावा दें; व्यापक कीटनाशक से बचें।"),
+        pair("Consult your KVK for approved IPM options.", "स्वीकृत IPM विकल्पों के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Timely sowing, crop rotation and regular scouting.", "समय पर बुवाई, फसल चक्र व नियमित निगरानी।"),
+        pair("Keep field borders clean to reduce egg-laying sites.", "अंडे देने की जगह कम करने हेतु खेत किनारे साफ़ रखें।")
+      ]
+    },
+    {
+      id: "maize-turcicum-blight", crops: ["maize"], kind: "fungal",
+      name: pair("Turcicum leaf blight", "टर्सिकम पत्ती झुलसा"),
+      sign: pair("Long grey-green cigar-shaped lesions; leaves dry prematurely.", "पत्तियों पर लंबे स्लेटी-हरे सिगार जैसे धब्बे; पत्तियाँ समय से पहले सूखती हैं।"),
+      symptoms: [
+        pair("Long cigar-shaped grey-green lesions", "लंबे सिगार जैसे स्लेटी-हरे धब्बे"),
+        pair("Lesions join and dry the leaf", "धब्बे मिलकर पत्ती सुखाना"),
+        pair("Lower leaves affected first", "पहले निचली पत्तियाँ प्रभावित")
+      ],
+      recovery: [
+        pair("Remove infected crop residue after harvest.", "कटाई के बाद संक्रमित फसल अवशेष हटाएँ।"),
+        pair("Improve spacing and airflow; avoid overhead irrigation.", "दूरी व हवा का आवागमन बढ़ाएँ; ऊपर से सिंचाई से बचें।"),
+        pair("Keep nutrition balanced and avoid excess nitrogen.", "पोषण संतुलित रखें और अधिक नाइट्रोजन से बचें।"),
+        pair("Ask your KVK about resistant hybrids.", "प्रतिरोधी हाइब्रिड के लिए KVK से पूछें।")
+      ],
+      prevention: [
+        pair("Resistant hybrids, rotation and residue management.", "प्रतिरोधी हाइब्रिड, फसल चक्र व अवशेष प्रबंधन।"),
+        pair("Avoid continuous maize on the same plot.", "एक ही खेत में लगातार मक्का न लगाएँ।")
+      ]
+    },
+    /* ---------------- CHICKPEA ---------------- */
+    {
+      id: "chickpea-wilt", crops: ["chickpea"], kind: "fungal",
+      name: pair("Fusarium wilt", "चने का उकठा (फ्यूजेरियम विल्ट)"),
+      sign: pair("Sudden wilting and yellowing; brown discolouration inside the stem.", "अचानक मुरझाना व पीलापन; तने के अंदर भूरा रंग।"),
+      symptoms: [
+        pair("Sudden wilting of plants", "पौधों का अचानक मुरझाना"),
+        pair("Yellowing starts from lower leaves", "पीलापन निचली पत्तियों से शुरू"),
+        pair("Brown colour inside the stem", "तने के अंदर भूरा रंग")
+      ],
+      recovery: [
+        pair("Remove wilted plants with their roots.", "मुरझाए पौधों को जड़ सहित हटाएँ।"),
+        pair("Do not move soil or tools between healthy and affected patches.", "स्वस्थ व प्रभावित हिस्सों के बीच मिट्टी/औज़ार न ले जाएँ।"),
+        pair("Rotate with cereals next season.", "अगली बार अनाज फसलों के साथ चक्र अपनाएँ।"),
+        pair("Use wilt-resistant varieties; confirm with KVK.", "उकठा-प्रतिरोधी किस्में लें; KVK से पुष्टि करें।")
+      ],
+      prevention: [
+        pair("Resistant varieties, rotation and clean seed.", "प्रतिरोधी किस्में, फसल चक्र व साफ़ बीज।"),
+        pair("Avoid waterlogging and repeated chickpea cropping.", "जलभराव व बार-बार चना लगाने से बचें।")
+      ]
+    },
+    {
+      id: "chickpea-pod-borer", crops: ["chickpea"], kind: "insect",
+      name: pair("Pod borer (Helicoverpa)", "फली छेदक (हेलिकोवर्पा)"),
+      sign: pair("Round holes in pods; caterpillar inside; flowers and young pods drop.", "फलियों में गोल छेद; अंदर सूंडी; फूल व छोटी फलियाँ गिरना।"),
+      symptoms: [
+        pair("Round holes in pods", "फलियों में गोल छेद"),
+        pair("Caterpillar inside the pod", "फली के अंदर सूंडी"),
+        pair("Flowers or young pods dropping", "फूल या छोटी फलियाँ गिरना")
+      ],
+      recovery: [
+        pair("Hand-pick larvae and damaged pods.", "सूंडियाँ व खराब फलियाँ हाथ से हटाएँ।"),
+        pair("Install pheromone traps to monitor the pest.", "कीट निगरानी हेतु फेरोमोन ट्रैप लगाएँ।"),
+        pair("Encourage birds and natural enemies.", "पक्षियों व प्राकृतिक शत्रुओं को बढ़ावा दें।"),
+        pair("Consult your KVK for approved IPM.", "स्वीकृत IPM के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Timely sowing and trap monitoring.", "समय पर बुवाई व ट्रैप निगरानी।"),
+        pair("Field sanitation after harvest.", "कटाई के बाद खेत की सफ़ाई।")
+      ]
+    },
+    /* ---------------- MUSTARD ---------------- */
+    {
+      id: "mustard-alternaria", crops: ["mustard"], kind: "fungal",
+      name: pair("Alternaria blight", "अल्टरनेरिया झुलसा"),
+      sign: pair("Dark brown concentric spots on leaves and pods; pods may split early.", "पत्तियों व फलियों पर गहरे भूरे गोल छल्लेदार धब्बे; फलियाँ जल्दी फट सकती हैं।"),
+      symptoms: [
+        pair("Brown spots with rings", "छल्लेदार भूरे धब्बे"),
+        pair("Spots on pods", "फलियों पर धब्बे"),
+        pair("Premature leaf drying", "पत्तियाँ समय से पहले सूखना")
+      ],
+      recovery: [
+        pair("Remove infected crop debris.", "संक्रमित फसल अवशेष हटाएँ।"),
+        pair("Avoid dense sowing and improve airflow.", "घनी बुवाई से बचें और हवा का आवागमन बढ़ाएँ।"),
+        pair("Keep nutrition balanced; avoid excess nitrogen.", "पोषण संतुलित रखें; अधिक नाइट्रोजन से बचें।"),
+        pair("Consult your KVK for approved fungicide.", "स्वीकृत फफूंदनाशी के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Clean seed, rotation and proper spacing.", "साफ़ बीज, फसल चक्र व उचित दूरी।"),
+        pair("Grow tolerant varieties where available.", "उपलब्ध हो तो सहनशील किस्में लगाएँ।")
+      ]
+    },
+    {
+      id: "mustard-white-rust", crops: ["mustard"], kind: "fungal",
+      name: pair("White rust", "सफेद रतुआ"),
+      sign: pair("White raised pustules on leaves and stems; distorted growth.", "पत्तियों व तनों पर सफेद उभरे फफोले; वृद्धि विकृत।"),
+      symptoms: [
+        pair("White raised pustules", "सफेद उभरे फफोले"),
+        pair("Distorted leaves or stems", "विकृत पत्तियाँ या तने"),
+        pair("Yellow patches on the upper leaf", "पत्ती के ऊपरी भाग पर पीले धब्बे")
+      ],
+      recovery: [
+        pair("Remove infected leaves and plants.", "संक्रमित पत्तियाँ व पौधे हटाएँ।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।"),
+        pair("Rotate away from mustard and other brassicas.", "सरसों व अन्य ब्रासिका से चक्र बदलें।"),
+        pair("Ask your KVK about resistant varieties.", "प्रतिरोधी किस्मों के लिए KVK से पूछें।")
+      ],
+      prevention: [
+        pair("Resistant varieties and rotation.", "प्रतिरोधी किस्में व फसल चक्र।"),
+        pair("Clean field and balanced moisture.", "साफ़ खेत व संतुलित नमी।")
+      ]
+    },
+    /* ---------------- GROUNDNUT ---------------- */
+    {
+      id: "groundnut-tikka", crops: ["groundnut"], kind: "fungal",
+      name: pair("Tikka (leaf spot)", "टिक्का रोग (पत्ती धब्बा)"),
+      sign: pair("Dark brown circular spots with a yellow halo; heavy premature leaf fall.", "पीले घेरे वाले गहरे भूरे गोल धब्बे; पत्तियाँ भारी मात्रा में जल्दी गिरना।"),
+      symptoms: [
+        pair("Dark brown spots with a yellow halo", "पीले घेरे वाले गहरे भूरे धब्बे"),
+        pair("Spots on both sides of the leaf", "पत्ती के दोनों ओर धब्बे"),
+        pair("Premature leaf fall", "पत्तियाँ समय से पहले गिरना")
+      ],
+      recovery: [
+        pair("Remove infected leaf litter.", "संक्रमित पत्ती कचरा हटाएँ।"),
+        pair("Rotate with cereals.", "अनाज फसलों के साथ चक्र अपनाएँ।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।"),
+        pair("Consult your KVK for approved fungicide.", "स्वीकृत फफूंदनाशी के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Rotation, clean seed and resistant varieties.", "फसल चक्र, साफ़ बीज व प्रतिरोधी किस्में।"),
+        pair("Remove volunteer plants.", "स्वयं उगे पौधे हटाएँ।")
+      ]
+    },
+    {
+      id: "groundnut-stem-rot", crops: ["groundnut"], kind: "fungal",
+      name: pair("Stem rot", "तना सड़न (स्टेम रॉट)"),
+      sign: pair("Sudden wilting; white cottony growth and mustard-like bodies at the stem base.", "अचानक मुरझाना; तने के आधार पर सफेद रुई जैसी वृद्धि व सरसों जैसे दाने।"),
+      symptoms: [
+        pair("Sudden wilting of plants", "पौधों का अचानक मुरझाना"),
+        pair("White growth at the stem base", "तने के आधार पर सफेद वृद्धि"),
+        pair("Stem base rots and plants pull out easily", "तना आधार सड़ना, पौधा आसानी से निकलना")
+      ],
+      recovery: [
+        pair("Remove affected plants along with surrounding soil.", "प्रभावित पौधे आसपास की मिट्टी सहित हटाएँ।"),
+        pair("Improve drainage; avoid waterlogging.", "जल निकास सुधारें; जलभराव से बचें।"),
+        pair("Rotate with cereals.", "अनाज फसलों के साथ चक्र अपनाएँ।"),
+        pair("Ask your KVK about biocontrol or approved options.", "जैविक नियंत्रण या स्वीकृत विकल्पों के लिए KVK से पूछें।")
+      ],
+      prevention: [
+        pair("Good drainage, rotation and clean seed.", "अच्छा जल निकास, फसल चक्र व साफ़ बीज।"),
+        pair("Avoid deep sowing in wet soil.", "गीली मिट्टी में गहरी बुवाई से बचें।")
+      ]
+    },
+    /* ---------------- SOYBEAN ---------------- */
+    {
+      id: "soybean-yellow-mosaic", crops: ["soybean"], kind: "viral",
+      name: pair("Yellow mosaic", "पीला मोज़ेक"),
+      sign: pair("Bright yellow mosaic patches on leaves; mottled, crinkled leaves and stunted plants.", "पत्तियों पर चमकीले पीले मोज़ेक धब्बे; चितकबरी, सिकुड़ी पत्तियाँ व बौने पौधे।"),
+      symptoms: [
+        pair("Yellow mosaic patches", "पीले मोज़ेक धब्बे"),
+        pair("Mottled or crinkled leaves", "चितकबरी या सिकुड़ी पत्तियाँ"),
+        pair("Stunted growth", "बौनी वृद्धि")
+      ],
+      recovery: [
+        pair("Remove infected plants early.", "संक्रमित पौधे जल्दी हटाएँ।"),
+        pair("Manage whitefly (the carrier) with IPM and yellow sticky traps.", "सफेद मक्खी (वाहक) को IPM व पीले चिपचिपे ट्रैप से नियंत्रित करें।"),
+        pair("Grow resistant varieties next season.", "अगली बार प्रतिरोधी किस्में लगाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Resistant varieties and whitefly management.", "प्रतिरोधी किस्में व सफेद मक्खी प्रबंधन।"),
+        pair("Avoid planting next to infected fields.", "संक्रमित खेतों के पास बुवाई से बचें।")
+      ]
+    },
+    {
+      id: "soybean-aerial-blight", crops: ["soybean"], kind: "fungal",
+      name: pair("Aerial blight (Rhizoctonia)", "हवाई झुलसा (राइज़ोक्टोनिया)"),
+      sign: pair("Water-soaked lesions and web-like fungal growth; rapid blighting of patches.", "पानी जैसे धब्बे व जाले जैसी फफूंद; धब्बों में तेज़ी से झुलसना।"),
+      symptoms: [
+        pair("Water-soaked lesions", "पानी जैसे धब्बे"),
+        pair("Web-like growth between plants", "पौधों के बीच जाले जैसी वृद्धि"),
+        pair("Rapid wilting and drying", "तेज़ी से मुरझाना व सूखना")
+      ],
+      recovery: [
+        pair("Remove infected plants and debris.", "संक्रमित पौधे व अवशेष हटाएँ।"),
+        pair("Improve airflow and avoid dense sowing.", "हवा का आवागमन बढ़ाएँ और घनी बुवाई से बचें।"),
+        pair("Rotate with cereals.", "अनाज फसलों के साथ चक्र अपनाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Rotation, spacing and clean seed.", "फसल चक्र, दूरी व साफ़ बीज।"),
+        pair("Avoid prolonged leaf wetness.", "पत्तियों के लंबे समय तक गीले रहने से बचें।")
+      ]
+    },
+    /* ---------------- COTTON ---------------- */
+    {
+      id: "cotton-pink-bollworm", crops: ["cotton"], kind: "insect",
+      name: pair("Pink bollworm", "गुलाबी सुंडी"),
+      sign: pair("Rosette-shaped flowers; small holes in bolls; pink larvae inside.", "गुलाब जैसे फूल; टिंडों में छोटे छेद; अंदर गुलाबी सूंडियाँ।"),
+      symptoms: [
+        pair("Rosette-shaped flowers", "गुलाब जैसे आकार के फूल"),
+        pair("Small holes in bolls", "टिंडों में छोटे छेद"),
+        pair("Pink larvae inside the boll", "टिंडे के अंदर गुलाबी सूंडी")
+      ],
+      recovery: [
+        pair("Remove and destroy rosette flowers and infested bolls.", "गुलाब जैसे फूल व संक्रमित टिंडे हटाकर नष्ट करें।"),
+        pair("Install pheromone traps for monitoring.", "निगरानी हेतु फेरोमोन ट्रैप लगाएँ।"),
+        pair("Clean the field and gin area after harvest.", "कटाई के बाद खेत व जिनिंग क्षेत्र साफ़ करें।"),
+        pair("Consult your KVK for approved IPM.", "स्वीकृत IPM के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Timely sowing and trap monitoring.", "समय पर बुवाई व ट्रैप निगरानी।"),
+        pair("Destroy crop residue after harvest.", "कटाई के बाद फसल अवशेष नष्ट करें।")
+      ]
+    },
+    {
+      id: "cotton-leaf-curl", crops: ["cotton"], kind: "viral",
+      name: pair("Cotton leaf curl virus", "कपास पत्ती मरोड़ वायरस"),
+      sign: pair("Upward curling leaves, thickened veins and leaf-like enations; whiteflies present.", "पत्तियाँ ऊपर मुड़ना, शिराएँ मोटी व पत्ती जैसी वृद्धि; सफेद मक्खी मौजूद।"),
+      symptoms: [
+        pair("Upward leaf curling", "पत्तियाँ ऊपर मुड़ना"),
+        pair("Thickened veins or leaf-like growth", "मोटी शिराएँ या पत्ती जैसी वृद्धि"),
+        pair("Whiteflies on the leaf underside", "पत्ती के नीचे सफेद मक्खियाँ")
+      ],
+      recovery: [
+        pair("Remove infected plants early.", "संक्रमित पौधे जल्दी हटाएँ।"),
+        pair("Manage whitefly with IPM and yellow sticky traps.", "सफेद मक्खी को IPM व पीले चिपचिपे ट्रैप से नियंत्रित करें।"),
+        pair("Grow resistant/tolerant varieties.", "प्रतिरोधी/सहनशील किस्में लगाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Resistant varieties and whitefly management.", "प्रतिरोधी किस्में व सफेद मक्खी प्रबंधन।"),
+        pair("Avoid late sowing and infected seed.", "देर से बुवाई व संक्रमित बीज से बचें।")
+      ]
+    },
+    /* ---------------- BAJRA ---------------- */
+    {
+      id: "bajra-downy-mildew", crops: ["bajra"], kind: "fungal",
+      name: pair("Downy mildew", "मृदुरोमिल आसिता (डाउनी मिल्ड्यू)"),
+      sign: pair("Yellowing, white downy growth on the leaf underside and stunted plants.", "पीलापन, पत्ती के नीचे सफेद रोमिल वृद्धि व बौने पौधे।"),
+      symptoms: [
+        pair("Yellow streaks on leaves", "पत्तियों पर पीली धारियाँ"),
+        pair("White down on the leaf underside", "पत्ती के नीचे सफेद रोम"),
+        pair("Stunted plants", "बौने पौधे")
+      ],
+      recovery: [
+        pair("Remove infected plants.", "संक्रमित पौधे हटाएँ।"),
+        pair("Rotate with non-host crops.", "गैर-मेजबान फसलों के साथ चक्र अपनाएँ।"),
+        pair("Avoid excess moisture and dense sowing.", "अधिक नमी व घनी बुवाई से बचें।"),
+        pair("Ask your KVK about resistant hybrids.", "प्रतिरोधी हाइब्रिड के लिए KVK से पूछें।")
+      ],
+      prevention: [
+        pair("Resistant hybrids, rotation and clean seed.", "प्रतिरोधी हाइब्रिड, फसल चक्र व साफ़ बीज।"),
+        pair("Good drainage and spacing.", "अच्छा जल निकास व दूरी।")
+      ]
+    },
+    {
+      id: "bajra-ergot", crops: ["bajra"], kind: "fungal",
+      name: pair("Ergot", "अरगट"),
+      sign: pair("Sticky honeydew on the ear, later dark hard bodies replace the grain.", "बाली पर चिपचिपा शहद जैसा स्राव, बाद में दाने की जगह गहरे कड़े दाने।"),
+      symptoms: [
+        pair("Sticky honeydew on the ear", "बाली पर चिपचिपा स्राव"),
+        pair("Dark hard bodies in the ear", "बाली में गहरे कड़े दाने"),
+        pair("Grain replaced by these bodies", "दाने इनसे बदले हुए")
+      ],
+      recovery: [
+        pair("Remove ergot bodies before harvest.", "कटाई से पहले अरगट दाने हटाएँ।"),
+        pair("Harvest early if the attack is severe.", "गंभीर हो तो जल्दी कटाई करें।"),
+        pair("Do not feed contaminated grain to animals.", "संक्रमित दाना पशुओं को न खिलाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Clean seed, timely sowing and rotation.", "साफ़ बीज, समय पर बुवाई व फसल चक्र।"),
+        pair("Remove flowering weeds around the field.", "खेत के आसपास फूलने वाले खरपतवार हटाएँ।")
+      ]
+    },
+    /* ---------------- MOONG ---------------- */
+    {
+      id: "moong-yellow-mosaic", crops: ["moong"], kind: "viral",
+      name: pair("Yellow mosaic", "पीला मोज़ेक"),
+      sign: pair("Yellow mosaic patches, mottled leaves and stunted plants.", "पीले मोज़ेक धब्बे, चितकबरी पत्तियाँ व बौने पौधे।"),
+      symptoms: [
+        pair("Yellow mosaic patches", "पीले मोज़ेक धब्बे"),
+        pair("Mottled leaves", "चितकबरी पत्तियाँ"),
+        pair("Stunted plants", "बौने पौधे")
+      ],
+      recovery: [
+        pair("Remove infected plants.", "संक्रमित पौधे हटाएँ।"),
+        pair("Manage whitefly with IPM.", "सफेद मक्खी को IPM से नियंत्रित करें।"),
+        pair("Grow resistant varieties.", "प्रतिरोधी किस्में लगाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Resistant varieties and whitefly management.", "प्रतिरोधी किस्में व सफेद मक्खी प्रबंधन।"),
+        pair("Avoid nearby infected crops.", "पास के संक्रमित खेतों से बचें।")
+      ]
+    },
+    {
+      id: "moong-cercospora", crops: ["moong"], kind: "fungal",
+      name: pair("Cercospora leaf spot", "सर्कोस्पोरा पत्ती धब्बा"),
+      sign: pair("Circular brown spots with a grey centre; premature leaf drop.", "स्लेटी केंद्र वाले गोल भूरे धब्बे; पत्तियाँ जल्दी गिरना।"),
+      symptoms: [
+        pair("Circular brown spots", "गोल भूरे धब्बे"),
+        pair("Grey centre in the spots", "धब्बों में स्लेटी केंद्र"),
+        pair("Premature leaf drop", "पत्तियाँ जल्दी गिरना")
+      ],
+      recovery: [
+        pair("Remove infected debris.", "संक्रमित अवशेष हटाएँ।"),
+        pair("Improve airflow and spacing.", "हवा का आवागमन व दूरी सुधारें।"),
+        pair("Rotate with cereals.", "अनाज फसलों के साथ चक्र अपनाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Clean seed, rotation and spacing.", "साफ़ बीज, फसल चक्र व दूरी।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।")
+      ]
+    },
+    /* ---------------- TOMATO ---------------- */
+    {
+      id: "tomato-early-blight", crops: ["tomato"], kind: "fungal",
+      name: pair("Early blight", "अगेती झुलसा"),
+      sign: pair("Concentric brown spots with a yellow halo, starting on lower leaves.", "पीले घेरे वाले छल्लेदार भूरे धब्बे, निचली पत्तियों से शुरू।"),
+      symptoms: [
+        pair("Brown spots with rings", "छल्लेदार भूरे धब्बे"),
+        pair("Yellow halo around spots", "धब्बों के चारों ओर पीला घेरा"),
+        pair("Lower leaves dry first", "पहले निचली पत्तियाँ सूखना")
+      ],
+      recovery: [
+        pair("Remove infected lower leaves.", "संक्रमित निचली पत्तियाँ हटाएँ।"),
+        pair("Mulch to stop soil splash onto leaves.", "मल्चिंग से मिट्टी के छींटे पत्तियों पर रोकें।"),
+        pair("Stake plants and keep spacing for airflow.", "पौधों को सहारा दें व हवा हेतु दूरी रखें।"),
+        pair("Consult your KVK for approved fungicide.", "स्वीकृत फफूंदनाशी के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Rotation, mulch, clean seed and spacing.", "फसल चक्र, मल्च, साफ़ बीज व दूरी।"),
+        pair("Water at the base, not over the leaves.", "पानी जड़ के पास दें, पत्तियों पर नहीं।")
+      ]
+    },
+    {
+      id: "tomato-late-blight", crops: ["tomato"], kind: "fungal",
+      name: pair("Late blight", "पछेती झुलसा"),
+      sign: pair("Water-soaked greasy lesions with white fuzzy growth; rapid collapse in cool, wet weather.", "पानी जैसे चिकने धब्बे व सफेद रोमिल वृद्धि; ठंडे, नम मौसम में तेज़ी से गिरना।"),
+      symptoms: [
+        pair("Water-soaked greasy lesions", "पानी जैसे चिकने धब्बे"),
+        pair("White growth on the underside", "पत्ती के नीचे सफेद वृद्धि"),
+        pair("Rapid wilting or collapse", "तेज़ी से मुरझाना या गिरना")
+      ],
+      recovery: [
+        pair("Remove and destroy infected plants; do not compost them.", "संक्रमित पौधे हटाकर नष्ट करें; कंपोस्ट न बनाएँ।"),
+        pair("Avoid overhead irrigation and working among wet plants.", "ऊपर से सिंचाई व गीले पौधों के बीच काम से बचें।"),
+        pair("Improve airflow and reduce humidity.", "हवा का आवागमन बढ़ाएँ और नमी कम करें।"),
+        pair("Alert nearby farmers and your KVK — act fast.", "आसपास के किसानों व KVK को बताएँ — जल्दी कार्रवाई करें।")
+      ],
+      prevention: [
+        pair("Avoid leaf wetness, rotate and use resistant varieties.", "पत्ती गीली न होने दें, चक्र अपनाएँ व प्रतिरोधी किस्में लें।"),
+        pair("Destroy infected crop residue.", "संक्रमित फसल अवशेष नष्ट करें।")
+      ]
+    },
+    /* ---------------- POTATO ---------------- */
+    {
+      id: "potato-late-blight", crops: ["potato"], kind: "fungal",
+      name: pair("Late blight", "पछेती झुलसा"),
+      sign: pair("Dark water-soaked leaf lesions with white growth; rapid decay.", "पत्तियों पर गहरे पानी जैसे धब्बे व सफेद वृद्धि; तेज़ी से सड़न।"),
+      symptoms: [
+        pair("Dark water-soaked lesions", "गहरे पानी जैसे धब्बे"),
+        pair("White growth on the underside", "पत्ती के नीचे सफेद वृद्धि"),
+        pair("Rapid decay of foliage", "पत्तियों का तेज़ी से सड़ना")
+      ],
+      recovery: [
+        pair("Remove infected foliage and destroy it.", "संक्रमित पत्तियाँ हटाकर नष्ट करें।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।"),
+        pair("Hill soil around stems to protect tubers.", "कंद बचाने हेतु तनों के चारों ओर मिट्टी चढ़ाएँ।"),
+        pair("Consult your KVK urgently.", "तुरंत KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Certified seed, rotation and dry foliage.", "प्रमाणित बीज, फसल चक्र व सूखी पत्तियाँ।"),
+        pair("Do not leave infected tubers in the field.", "संक्रमित कंद खेत में न छोड़ें।")
+      ]
+    },
+    {
+      id: "potato-early-blight", crops: ["potato"], kind: "fungal",
+      name: pair("Early blight", "अगेती झुलसा"),
+      sign: pair("Target-like brown spots on older leaves; yellowing around spots.", "पुरानी पत्तियों पर निशाने जैसे भूरे धब्बे; धब्बों के आसपास पीलापन।"),
+      symptoms: [
+        pair("Target-like brown spots", "निशाने जैसे भूरे धब्बे"),
+        pair("Yellowing around spots", "धब्बों के आसपास पीलापन"),
+        pair("Older leaves affected first", "पहले पुरानी पत्तियाँ प्रभावित")
+      ],
+      recovery: [
+        pair("Remove infected leaves.", "संक्रमित पत्तियाँ हटाएँ।"),
+        pair("Keep nutrition balanced and avoid plant stress.", "पोषण संतुलित रखें व पौधों को तनाव से बचाएँ।"),
+        pair("Rotate crops.", "फसल चक्र अपनाएँ।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Rotation, healthy seed and balanced nutrition.", "फसल चक्र, स्वस्थ बीज व संतुलित पोषण।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।")
+      ]
+    },
+    /* ---------------- ONION ---------------- */
+    {
+      id: "onion-purple-blotch", crops: ["onion"], kind: "fungal",
+      name: pair("Purple blotch", "बैंगनी धब्बा"),
+      sign: pair("Purple-brown lesions with a pale centre on leaves and seed stalks.", "पत्तियों व बीज डंठल पर हल्के केंद्र वाले बैंगनी-भूरे धब्बे।"),
+      symptoms: [
+        pair("Purple-brown leaf lesions", "पत्तियों पर बैंगनी-भूरे धब्बे"),
+        pair("Pale centre in the lesion", "धब्बे में हल्का केंद्र"),
+        pair("Leaf tips die back", "पत्ती की नोक सूखना")
+      ],
+      recovery: [
+        pair("Remove infected leaves.", "संक्रमित पत्तियाँ हटाएँ।"),
+        pair("Avoid overhead irrigation.", "ऊपर से सिंचाई से बचें।"),
+        pair("Improve airflow and spacing.", "हवा का आवागमन व दूरी सुधारें।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Clean seed, rotation and spacing.", "साफ़ बीज, फसल चक्र व दूरी।"),
+        pair("Avoid excess nitrogen.", "अधिक नाइट्रोजन से बचें।")
+      ]
+    },
+    {
+      id: "onion-thrips", crops: ["onion"], kind: "insect",
+      name: pair("Thrips", "थ्रिप्स"),
+      sign: pair("Silvery streaks on leaves, curling and tiny insects in the leaf axils.", "पत्तियों पर चांदी जैसी धारियाँ, मुड़ना व पत्ती के कोण में छोटे कीट।"),
+      symptoms: [
+        pair("Silvery streaks on leaves", "पत्तियों पर चांदी जैसी धारियाँ"),
+        pair("Leaves curl or distort", "पत्तियाँ मुड़ना या विकृत होना"),
+        pair("Tiny insects in the leaf axils", "पत्ती के कोण में छोटे कीट")
+      ],
+      recovery: [
+        pair("Use blue sticky traps for monitoring.", "निगरानी हेतु नीले चिपचिपे ट्रैप लगाएँ।"),
+        pair("Avoid excess nitrogen.", "अधिक नाइट्रोजन से बचें।"),
+        pair("Keep the field weed-free.", "खेत खरपतवार-मुक्त रखें।"),
+        pair("Consult your KVK for approved IPM.", "स्वीकृत IPM के लिए KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Trap monitoring, weed control and balanced nutrition.", "ट्रैप निगरानी, खरपतवार नियंत्रण व संतुलित पोषण।"),
+        pair("Avoid repeated insecticide sprays.", "बार-बार कीटनाशक छिड़काव से बचें।")
+      ]
+    },
+    /* ---------------- SUGARCANE ---------------- */
+    {
+      id: "sugarcane-red-rot", crops: ["sugarcane"], kind: "fungal",
+      name: pair("Red rot", "लाल सड़न"),
+      sign: pair("Reddish discolouration inside the cane with a sour or alcoholic smell; canes dry.", "गन्ने के अंदर लाल रंग व खट्टी/शराब जैसी गंध; गन्ने सूखना।"),
+      symptoms: [
+        pair("Reddish stem inside", "तने के अंदर लाल रंग"),
+        pair("Sour or alcoholic smell", "खट्टी या शराब जैसी गंध"),
+        pair("Drying of canes", "गन्ने सूखना")
+      ],
+      recovery: [
+        pair("Remove and destroy affected clumps.", "प्रभावित गन्ने के झुंड हटाकर नष्ट करें।"),
+        pair("Do not use affected cane as seed.", "प्रभावित गन्ना बीज के रूप में न लें।"),
+        pair("Rotate or fallow; improve drainage.", "फसल चक्र/परती करें; जल निकास सुधारें।"),
+        pair("Consult your KVK or sugar-mill advisory.", "KVK या चीनी मिल सलाह से परामर्श करें।")
+      ],
+      prevention: [
+        pair("Healthy seed cane, rotation and drainage.", "स्वस्थ बीज गन्ना, फसल चक्र व जल निकास।"),
+        pair("Avoid waterlogging.", "जलभराव से बचें।")
+      ]
+    },
+    {
+      id: "sugarcane-smut", crops: ["sugarcane"], kind: "fungal",
+      name: pair("Whip smut", "कोड़ा स्मट"),
+      sign: pair("Black whip-like shoot from the growing point; thin, grassy canes.", "वृद्धि बिंदु से काला कोड़े जैसा अंकुर; पतले, घास जैसे गन्ने।"),
+      symptoms: [
+        pair("Black whip-like shoot", "काला कोड़े जैसा अंकुर"),
+        pair("Thin grassy canes", "पतले घास जैसे गन्ने"),
+        pair("Stunted clumps", "बौने झुंड")
+      ],
+      recovery: [
+        pair("Remove whips in a bag before spores spread.", "बीजाणु फैलने से पहले कोड़े थैली में हटाएँ।"),
+        pair("Rogue out affected clumps.", "प्रभावित झुंड निकालें।"),
+        pair("Use healthy seed cane.", "स्वस्थ बीज गन्ना लें।"),
+        pair("Consult your KVK.", "KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Healthy seed and rotation.", "स्वस्थ बीज व फसल चक्र।"),
+        pair("Use seed treatment only as advised locally.", "बीजोपचार केवल स्थानीय सलाह अनुसार करें।")
+      ]
+    },
+    /* ---------------- GENERIC (all crops) ---------------- */
+    {
+      id: "generic-stress", crops: "all", kind: "disorder",
+      name: pair("Nutrient deficiency or water stress", "पोषक तत्व कमी या जल तनाव"),
+      sign: pair("Uniform yellowing, leaf-edge burn, wilting or stunting without spots or insects.", "बिना धब्बों/कीटों के एक समान पीलापन, पत्ती किनारे जलना, मुरझाना या बौनापन।"),
+      symptoms: [
+        pair("Uniform yellowing of leaves", "पत्तियों का एक समान पीलापन"),
+        pair("Leaf edges dry or burn", "पत्ती के किनारे सूखना या जलना"),
+        pair("Wilting even when soil is moist", "मिट्टी नम होने पर भी मुरझाना")
+      ],
+      recovery: [
+        pair("Check soil moisture and drainage first.", "पहले मिट्टी की नमी व जल निकास जाँचें।"),
+        pair("Do a soil test and correct pH/nutrients as advised.", "मृदा परीक्षण कराएँ और सलाह अनुसार pH/पोषक तत्व सुधारें।"),
+        pair("Avoid over-watering and over-fertilising.", "अधिक पानी व अधिक खाद से बचें।"),
+        pair("Consult your KVK with photos and the soil test.", "फ़ोटो व मृदा परीक्षण के साथ KVK से सलाह लें।")
+      ],
+      prevention: [
+        pair("Regular soil testing and balanced organic matter.", "नियमित मृदा परीक्षण व संतुलित जैविक खाद।"),
+        pair("Proper irrigation and drainage.", "उचित सिंचाई व जल निकास।")
+      ]
+    }
+  ];
+
+  /* ----------------------------------------------------------------------
+   * OFFICIAL AGRICULTURE DATA (India)
+   * Reproduced from Ministry of Agriculture & Farmers Welfare releases.
+   * These are national statistics for context — NOT a forecast for any farm.
+   * -------------------------------------------------------------------- */
+  var OFFICIAL_AGRI = {
+    updated: "2024-25 final estimates (released 2025)",
+    headline: {
+      foodgrain2024_25: 357.73,   // million tonnes
+      foodgrain2023_24: 332.30,   // million tonnes
+      growthPct: 7.65,
+      rice2023_24: 137.83,        // million tonnes
+      wheat2023_24: 113.29,       // million tonnes
+      oilseeds2023_24: 39.67      // million tonnes
+    },
+    trend: [
+      { year: "2004-05", value: 204.6 },
+      { year: "2014-15", value: 252.0 },
+      { year: "2022-23", value: 329.687 },
+      { year: "2023-24", value: 332.298 },
+      { year: "2024-25", value: 357.73 }
+    ],
+    cropMix2023_24: [
+      { id: "rice", label: pair("Rice", "चावल"), value: 1378.25 },
+      { id: "wheat", label: pair("Wheat", "गेहूँ"), value: 1132.92 },
+      { id: "coarse", label: pair("Coarse cereals", "मोटे अनाज"), value: 569.36 },
+      { id: "pulses", label: pair("Pulses", "दलहन"), value: 242.46 }
+    ],
+    sources: [
+      {
+        label: pair("Ministry of Agriculture & Farmers Welfare — Final Estimates of Major Agricultural Crops 2024-25 (PIB)", "कृषि एवं किसान कल्याण मंत्रालय — प्रमुख कृषि फसलों के अंतिम अनुमान 2024-25 (PIB)"),
+        url: "https://pib.gov.in/PressReleasePage.aspx?PRID=2192315"
+      },
+      {
+        label: pair("PIB — long-term foodgrain production trend (2004-05, 2014-15, 2023-24)", "PIB — खाद्यान्न उत्पादन का दीर्घकालिक रुझान (2004-05, 2014-15, 2023-24)"),
+        url: "https://pib.gov.in/PressReleasePage.aspx?PRID=2098424"
+      },
+      {
+        label: pair("Ministry of Agriculture & Farmers Welfare — Final Estimates 2023-24 (crop-wise), upag.gov.in", "कृषि एवं किसान कल्याण मंत्रालय — अंतिम अनुमान 2023-24 (फसलवार), upag.gov.in"),
+        url: "https://upag.gov.in"
+      }
+    ]
+  };
+
+  /* ----------------------------------------------------------------------
    * NUTRITION REFERENCE (per 100 g, approximate)
    * Values are indicative general reference figures compiled from public
    * food-composition sources. They are NOT a medical or dietary prescription.
@@ -735,6 +1386,8 @@ window.AGRI_CONFIG = {
     UNITS: UNITS,
     STATES: STATES,
     CROPS: CROPS,
+    CROP_DISEASES: CROP_DISEASES,
+    OFFICIAL_AGRI: OFFICIAL_AGRI,
     NUTRITION: NUTRITION,
     JUNK_FOODS: JUNK_FOODS,
     WELLNESS_GOALS: WELLNESS_GOALS,
@@ -778,6 +1431,7 @@ window.I18N = {
     common: {
       explore: "Explore",
       learnMore: "Learn more",
+      error: "Something went wrong. Please try again.",
       back: "Back",
       next: "Next",
       cancel: "Cancel",
@@ -1026,6 +1680,99 @@ window.I18N = {
         pref: "Please choose at least one preference."
       }
     },
+    disease: {
+      eyebrow: "Crop health",
+      title: "Crop disease check",
+      subtitle: "Upload a crop photo, choose the crop, and see the common possible diseases with step-by-step recovery. A photo alone cannot confirm a disease — use the symptom checklist to narrow it down.",
+      demoNotice: "This is a reference screening tool (demo mode), not a laboratory diagnosis. Always confirm with your local KVK / agriculture extension officer before using any treatment.",
+      cropLabel: "Which crop is in the photo?",
+      cropHint: "Choosing the crop lets us show the diseases that actually occur on it.",
+      cropPlaceholder: "Select crop",
+      choosePhoto: "Choose crop photo",
+      dropHere: "Drop a crop photo here",
+      uploadHint: "A close, clear photo of the affected leaf, stem or fruit in daylight works best. JPG, PNG or WebP, up to 6 MB.",
+      analyse: "Check crop photo",
+      analysing: "Checking the photo…",
+      analysingHint: "Measuring the image and preparing the crop-specific checklist.",
+      replace: "Replace photo",
+      remove: "Remove photo",
+      resultTitle: "Crop health screening",
+      visualTitle: "Visual screening",
+      demoBadge: "Demo screening",
+      photoQuality: "Photo quality",
+      qualityGood: "Good — clear enough for screening",
+      qualityLowLight: "Low light — retake in daylight for a better check",
+      qualityWashed: "Too bright or flat — retake with even daylight",
+      qualityBlurry: "Low detail — hold steady and get closer",
+      qualityUnknown: "Could not read the image clearly",
+      measured: "What we measured in your photo",
+      brightness: "Brightness",
+      contrast: "Contrast",
+      greenArea: "Green area",
+      warmArea: "Yellow/brown area",
+      darkArea: "Dark area",
+      possibleTitle: "Possible issues to check for {crop}",
+      possibleIntro: "These are the common diseases and disorders for this crop. Tick the symptoms you can actually see to narrow it down.",
+      symptomTitle: "Symptom check",
+      symptomIntro: "Tick every sign that matches what you see on the plant. Leave blank if you are unsure.",
+      rankTitle: "Most likely based on your symptoms",
+      rankNone: "No symptoms ticked yet — showing common possibilities.",
+      match: "{score}% symptom match",
+      common: "Common possibility",
+      signs: "Typical signs",
+      recovery: "Steps to recover",
+      prevention: "Prevent next time",
+      consult: "Confirm with your KVK / extension officer before buying or applying any chemical. This tool never recommends doses.",
+      resetSymptoms: "Clear symptom ticks",
+      noPhoto: "Please choose a crop photo first.",
+      noCrop: "Please choose the crop in the photo.",
+      errorType: "Unsupported file type. Please use JPG, PNG or WebP.",
+      errorSize: "File is too large. Maximum size is 6 MB.",
+      errorAnalysis: "Could not check the photo. Please try again.",
+      kindFungal: "Fungal",
+      kindBacterial: "Bacterial",
+      kindViral: "Viral",
+      kindInsect: "Insect pest",
+      kindDisorder: "Disorder / stress",
+      disclaimer: "A photo and symptom checklist cannot confirm a disease. Laboratory or expert diagnosis is required for certainty."
+    },
+    charts: {
+      profitTitle: "Estimated net profit range by crop",
+      profitSub: "Each bar is the low-to-high estimate for your land area. A longer bar is not a guarantee of profit.",
+      rangeLow: "Low estimate",
+      rangeHigh: "High estimate",
+      rangeMid: "Midpoint",
+      costTitle: "Estimated cost breakdown",
+      costSub: "Share of the estimated total cultivation cost (midpoint of the range).",
+      costSeed: "Seed",
+      costFertiliser: "Fertiliser",
+      costLabour: "Labour",
+      costIrrigation: "Irrigation",
+      costTotal: "Total cost",
+      officialEyebrow: "Official data",
+      officialTitle: "India agriculture at a glance",
+      officialSub: "National foodgrain production published by the Ministry of Agriculture & Farmers Welfare. Shown for context — it is not a forecast for your farm.",
+      kpiFoodgrain: "Foodgrain production (2024-25)",
+      kpiGrowth: "Growth over 2023-24",
+      kpiRice: "Rice (2023-24)",
+      kpiWheat: "Wheat (2023-24)",
+      kpiOilseeds: "Oilseeds (2023-24)",
+      trendTitle: "Foodgrain production trend",
+      trendSub: "Million tonnes. Points are spaced by the actual year, not evenly.",
+      mixTitle: "Foodgrain production by group (2023-24)",
+      mixSub: "Lakh tonnes. 1 lakh tonne = 100,000 tonnes.",
+      sources: "Sources",
+      sourceNote: "Official figures are reproduced as published. The Ministry may revise them.",
+      updated: "Last official release used",
+      millionTonnes: "million tonnes",
+      lakhTonnes: "lakh tonnes",
+      dataDisclaimer: "Official statistics describe the whole country, not your field. Use them for context only.",
+      viewData: "View official data",
+      chartAriaProfit: "Chart of estimated net profit range by crop",
+      chartAriaCost: "Donut chart of estimated cultivation cost breakdown",
+      chartAriaTrend: "Line chart of India foodgrain production over time",
+      chartAriaMix: "Bar chart of foodgrain production by group"
+    },
     scanner: {
       title: "AI Food Scanner & Nutrition Analyser",
       subtitle: "Upload a food photo for a visible-freshness check, then view approximate nutrition facts from reference food data.",
@@ -1056,6 +1803,28 @@ window.I18N = {
       statusFresh: "Appears Fresh",
       statusSpoil: "Possible Spoilage",
       statusUnknown: "Unable to Determine",
+      statusClear: "No obvious visual spoilage signs",
+      statusCheck: "Check carefully — possible visual concerns",
+      visualStatus: "Visual status (estimate)",
+      visualStatusNote: "Based only on measurable photo properties: light, colour and contrast. This is NOT a food-safety test.",
+      visualEstimateBadge: "VISUAL ESTIMATE",
+      photoQuality: "Photo quality",
+      qualityGood: "Good",
+      qualityLow: "Low light or low detail",
+      measured: "What we measured in your photo",
+      brightness: "Brightness",
+      contrast: "Contrast",
+      greenArea: "Green area",
+      brownArea: "Brown / dark area",
+      yellowArea: "Yellow area",
+      howToConfirm: "How to confirm before eating",
+      check1: "Look for mould — fuzzy white, green, black or blue patches.",
+      check2: "Smell for sour, musty or off odours.",
+      check3: "Feel for slime or soft, mushy spots.",
+      check4: "Check the use-by date on packaged food.",
+      check5: "If anything is doubtful, throw it out — never taste food to test it.",
+      retakePhoto: "Retake in daylight",
+      estimateNote: "This status comes from a rule-based measurement of the photo, not a trained vision model. It cannot detect invisible contamination, toxins or pathogens.",
       confirmTitle: "Confirm the food",
       confirmText: "We could not identify this confidently. Please confirm or select the food so we can show accurate reference nutrition.",
       confirmSelect: "Select the food",
@@ -1300,6 +2069,7 @@ window.I18N = {
     common: {
       explore: "देखें",
       learnMore: "और जानें",
+      error: "कुछ गड़बड़ हुई। कृपया दोबारा प्रयास करें।",
       back: "पीछे",
       next: "आगे",
       cancel: "रद्द करें",
@@ -1548,6 +2318,99 @@ window.I18N = {
         pref: "कृपया कम से कम एक प्राथमिकता चुनें।"
       }
     },
+    disease: {
+      eyebrow: "फसल स्वास्थ्य",
+      title: "फसल रोग जाँच",
+      subtitle: "फसल की फ़ोटो अपलोड करें, फसल चुनें और आम संभावित रोगों के साथ रिकवरी के चरण देखें। केवल फ़ोटो से रोग की पुष्टि नहीं होती — नीचे लक्षण चुनकर संभावना कम करें।",
+      demoNotice: "यह संदर्भ-आधारित स्क्रीनिंग टूल (डेमो मोड) है, प्रयोगशाला निदान नहीं। किसी भी उपचार से पहले अपने स्थानीय KVK / कृषि विस्तार अधिकारी से पुष्टि करें।",
+      cropLabel: "फ़ोटो में कौन सी फसल है?",
+      cropHint: "फसल चुनने से वही रोग दिखेंगे जो उस पर होते हैं।",
+      cropPlaceholder: "फसल चुनें",
+      choosePhoto: "फसल की फ़ोटो चुनें",
+      dropHere: "फसल की फ़ोटो यहाँ छोड़ें",
+      uploadHint: "प्रभावित पत्ती, तना या फल की दिन की रोशनी में साफ़, नज़दीकी फ़ोटो सबसे अच्छी है। JPG, PNG या WebP, अधिकतम 6 MB।",
+      analyse: "फसल फ़ोटो जाँचें",
+      analysing: "फ़ोटो जाँची जा रही है…",
+      analysingHint: "छवि मापी जा रही है और फसल-विशिष्ट चेकलिस्ट तैयार हो रही है।",
+      replace: "फ़ोटो बदलें",
+      remove: "फ़ोटो हटाएँ",
+      resultTitle: "फसल स्वास्थ्य स्क्रीनिंग",
+      visualTitle: "दृश्य स्क्रीनिंग",
+      demoBadge: "डेमो स्क्रीनिंग",
+      photoQuality: "फ़ोटो की गुणवत्ता",
+      qualityGood: "अच्छी — स्क्रीनिंग के लिए पर्याप्त साफ़",
+      qualityLowLight: "कम रोशनी — बेहतर जाँच के लिए दिन में दोबारा लें",
+      qualityWashed: "बहुत चमकीली या फीकी — एक समान दिन की रोशनी में दोबारा लें",
+      qualityBlurry: "कम विवरण — फ़ोन स्थिर रखें और पास आएँ",
+      qualityUnknown: "छवि साफ़ नहीं पढ़ी जा सकी",
+      measured: "आपकी फ़ोटो में हमने क्या मापा",
+      brightness: "चमक",
+      contrast: "कंट्रास्ट",
+      greenArea: "हरा क्षेत्र",
+      warmArea: "पीला/भूरा क्षेत्र",
+      darkArea: "गहरा क्षेत्र",
+      possibleTitle: "{crop} के लिए संभावित समस्याएँ",
+      possibleIntro: "यह इस फसल के आम रोग व विकार हैं। जो लक्षण वास्तव में दिखें उन्हें चुनकर संभावना कम करें।",
+      symptomTitle: "लक्षण जाँच",
+      symptomIntro: "पौधे पर जो भी संकेत दिखे उन्हें चुनें। संदेह हो तो खाली छोड़ें।",
+      rankTitle: "आपके लक्षणों के आधार पर सर्वाधिक संभावना",
+      rankNone: "अभी कोई लक्षण नहीं चुना — आम संभावनाएँ दिखाई जा रही हैं।",
+      match: "{score}% लक्षण मेल",
+      common: "आम संभावना",
+      signs: "सामान्य संकेत",
+      recovery: "रिकवरी के चरण",
+      prevention: "अगली बार बचाव",
+      consult: "कोई भी रसायन खरीदने या लगाने से पहले अपने KVK / विस्तार अधिकारी से पुष्टि करें। यह टूल कभी मात्रा नहीं बताता।",
+      resetSymptoms: "लक्षण चयन साफ़ करें",
+      noPhoto: "कृपया पहले फसल की फ़ोटो चुनें।",
+      noCrop: "कृपया फ़ोटो में जो फसल है उसे चुनें।",
+      errorType: "असमर्थित फ़ाइल प्रकार। कृपया JPG, PNG या WebP उपयोग करें।",
+      errorSize: "फ़ाइल बहुत बड़ी है। अधिकतम 6 MB।",
+      errorAnalysis: "फ़ोटो जाँची नहीं जा सकी। कृपया दोबारा प्रयास करें।",
+      kindFungal: "फफूंद",
+      kindBacterial: "जीवाणु",
+      kindViral: "वायरस",
+      kindInsect: "कीट",
+      kindDisorder: "विकार / तनाव",
+      disclaimer: "फ़ोटो और लक्षण चेकलिस्ट से रोग की पुष्टि नहीं होती। निश्चितता के लिए प्रयोगशाला या विशेषज्ञ निदान ज़रूरी है।"
+    },
+    charts: {
+      profitTitle: "फसल के अनुसार अनुमानित शुद्ध लाभ सीमा",
+      profitSub: "हर पट्टी आपकी ज़मीन के लिए कम से अधिक अनुमान दिखाती है। लंबी पट्टी लाभ की गारंटी नहीं है।",
+      rangeLow: "कम अनुमान",
+      rangeHigh: "अधिक अनुमान",
+      rangeMid: "मध्य बिंदु",
+      costTitle: "अनुमानित लागत विवरण",
+      costSub: "अनुमानित कुल खेती लागत में हिस्सा (सीमा का मध्य बिंदु)।",
+      costSeed: "बीज",
+      costFertiliser: "खाद",
+      costLabour: "मज़दूरी",
+      costIrrigation: "सिंचाई",
+      costTotal: "कुल लागत",
+      officialEyebrow: "आधिकारिक डेटा",
+      officialTitle: "भारत की कृषि — एक नज़र में",
+      officialSub: "कृषि एवं किसान कल्याण मंत्रालय द्वारा प्रकाशित राष्ट्रीय खाद्यान्न उत्पादन। केवल संदर्भ हेतु — यह आपके खेत का पूर्वानुमान नहीं है।",
+      kpiFoodgrain: "खाद्यान्न उत्पादन (2024-25)",
+      kpiGrowth: "2023-24 की तुलना में वृद्धि",
+      kpiRice: "चावल (2023-24)",
+      kpiWheat: "गेहूँ (2023-24)",
+      kpiOilseeds: "तिलहन (2023-24)",
+      trendTitle: "खाद्यान्न उत्पादन का रुझान",
+      trendSub: "मिलियन टन। बिंदु वास्तविक वर्ष के अनुसार दूरी पर हैं, समान रूप से नहीं।",
+      mixTitle: "समूह के अनुसार खाद्यान्न उत्पादन (2023-24)",
+      mixSub: "लाख टन। 1 लाख टन = 1,00,000 टन।",
+      sources: "स्रोत",
+      sourceNote: "आधिकारिक आँकड़े प्रकाशित रूप में दिए गए हैं। मंत्रालय इन्हें संशोधित कर सकता है।",
+      updated: "अंतिम आधिकारिक रिलीज़",
+      millionTonnes: "मिलियन टन",
+      lakhTonnes: "लाख टन",
+      dataDisclaimer: "आधिकारिक आँकड़े पूरे देश का वर्णन करते हैं, आपके खेत का नहीं। इन्हें केवल संदर्भ के लिए उपयोग करें।",
+      viewData: "आधिकारिक डेटा देखें",
+      chartAriaProfit: "फसल के अनुसार अनुमानित शुद्ध लाभ सीमा का चार्ट",
+      chartAriaCost: "अनुमानित खेती लागत विवरण का डोनट चार्ट",
+      chartAriaTrend: "समय के साथ भारत के खाद्यान्न उत्पादन का लाइन चार्ट",
+      chartAriaMix: "समूह के अनुसार खाद्यान्न उत्पादन का बार चार्ट"
+    },
     scanner: {
       title: "AI फ़ूड स्कैनर व पोषण विश्लेषक",
       subtitle: "खाने की फ़ोटो अपलोड करें — दिखने वाली ताज़गी की जाँच करें, फिर संदर्भ डेटा से लगभग पोषण जानकारी देखें।",
@@ -1578,6 +2441,28 @@ window.I18N = {
       statusFresh: "ताज़ा दिखता है",
       statusSpoil: "खराबी संभव",
       statusUnknown: "निर्धारित नहीं हो सका",
+      statusClear: "सड़न के स्पष्ट दृश्य संकेत नहीं",
+      statusCheck: "ध्यान से जाँचें — दृश्य चिंता संभव",
+      visualStatus: "दृश्य स्थिति (अनुमान)",
+      visualStatusNote: "केवल मापी जा सकने वाली फ़ोटो विशेषताओं पर आधारित: रोशनी, रंग और कंट्रास्ट। यह खाद्य-सुरक्षा परीक्षण नहीं है।",
+      visualEstimateBadge: "दृश्य अनुमान",
+      photoQuality: "फ़ोटो की गुणवत्ता",
+      qualityGood: "अच्छी",
+      qualityLow: "कम रोशनी या कम विवरण",
+      measured: "आपकी फ़ोटो में हमने क्या मापा",
+      brightness: "चमक",
+      contrast: "कंट्रास्ट",
+      greenArea: "हरा क्षेत्र",
+      brownArea: "भूरा / गहरा क्षेत्र",
+      yellowArea: "पीला क्षेत्र",
+      howToConfirm: "खाने से पहले कैसे पुष्टि करें",
+      check1: "फफूंद देखें — सफेद, हरे, काले या नीले रोमिल धब्बे।",
+      check2: "खट्टी, बदबूदार या अलग गंध सूँघें।",
+      check3: "चिपचिपाहट या मुलायम, गीले धब्बे महसूस करें।",
+      check4: "पैक्ड भोजन पर एक्सपायरी तिथि देखें।",
+      check5: "कुछ भी संदिग्ध हो तो फेंक दें — जाँचने के लिए चखें नहीं।",
+      retakePhoto: "दिन की रोशनी में दोबारा लें",
+      estimateNote: "यह स्थिति फ़ोटो के नियम-आधारित माप से है, किसी प्रशिक्षित विज़न मॉडल से नहीं। यह अदृश्य संदूषण, विष या रोगाणु नहीं पकड़ सकती।",
       confirmTitle: "भोजन की पुष्टि करें",
       confirmText: "हम इसे भरोसे से पहचान नहीं पाए। कृपया भोजन की पुष्टि करें या चुनें ताकि हम सही संदर्भ पोषण दिखा सकें।",
       confirmSelect: "भोजन चुनें",
@@ -2380,6 +3265,518 @@ window.I18N = {
   };
 })();
 
+/* ==================== js/services/charts.js ==================== */
+/* ==========================================================================
+   AgriHealthAI — charts
+   Small, dependency-free SVG chart builders used by the agriculture page.
+   Everything is generated as inline SVG so it stays crisp, responsive and
+   accessible (role="img" + <title>). No external chart library, no tracking.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var C = {
+    green: "#21865B",
+    greenDark: "#14543B",
+    greenMid: "#3E9E75",
+    greenLight: "#7FC3A3",
+    mint: "#DDF3E5",
+    mintSoft: "#EFF7F2",
+    track: "#E7F0EA",
+    amber: "#D98A1F",
+    amberLight: "#FBE7C6",
+    ink: "#202A24",
+    muted: "#68756D",
+    grid: "#E3EDE7",
+    white: "#FFFFFF"
+  };
+
+  var MONTH_FONT = "600 12px Inter, system-ui, -apple-system, 'Segoe UI', sans-serif";
+  var VALUE_FONT = "700 12px Inter, system-ui, -apple-system, 'Segoe UI', sans-serif";
+  var LABEL_FONT = "500 12px Inter, system-ui, -apple-system, 'Segoe UI', sans-serif";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function num(n, d) {
+    var v = Number(n);
+    if (!isFinite(v)) v = 0;
+    try {
+      return v.toLocaleString("en-IN", { minimumFractionDigits: d || 0, maximumFractionDigits: d == null ? 0 : d });
+    } catch (e) {
+      return String(Math.round(v));
+    }
+  }
+
+  function compactINR(v) {
+    var n = Number(v) || 0;
+    var a = Math.abs(n);
+    if (a >= 10000000) return "\u20B9" + (n / 10000000).toFixed(1) + " Cr";
+    if (a >= 100000) return "\u20B9" + (n / 100000).toFixed(1) + " L";
+    if (a >= 1000) return "\u20B9" + Math.round(n / 1000) + "k";
+    return "\u20B9" + Math.round(n);
+  }
+
+  function niceMax(v) {
+    if (!(v > 0)) return 1;
+    var exp = Math.pow(10, Math.floor(Math.log(v) / Math.LN10));
+    var steps = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+    var f = v / exp;
+    for (var i = 0; i < steps.length; i++) {
+      if (f <= steps[i]) return steps[i] * exp;
+    }
+    return 10 * exp;
+  }
+
+  function wrap(inner, w, h, label) {
+    return '<svg class="chart-svg" viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' +
+      esc(label) + '" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">' +
+      "<title>" + esc(label) + "</title>" + inner + "</svg>";
+  }
+
+  function text(x, y, str, opts) {
+    opts = opts || {};
+    return '<text x="' + x + '" y="' + y + '" fill="' + (opts.fill || C.muted) +
+      '" font-size="' + (opts.size || 12) + '" font-weight="' + (opts.weight || 500) +
+      '" text-anchor="' + (opts.anchor || "start") + '"' +
+      (opts.font ? ' font-family="' + esc(opts.font) + '"' : "") +
+      (opts.opacity != null ? ' opacity="' + opts.opacity + '"' : "") + ">" +
+      esc(str) + "</text>";
+  }
+
+  /* ---------------------------------------------------------------------
+   * Horizontal bar chart (used for official crop-group production)
+   * opts: { data:[{label,value,color?,sub?}], width, labelWidth, unit,
+   *         valueFmt, ariaLabel, decimals }
+   * ------------------------------------------------------------------- */
+  function barChart(opts) {
+    opts = opts || {};
+    var data = opts.data || [];
+    var width = opts.width || 720;
+    var labelW = opts.labelWidth || 150;
+    var rightW = opts.rightW || 92;
+    var rowH = opts.rowH || 46;
+    var barH = opts.barH || 22;
+    var top = 10;
+    var bottom = 12;
+    var height = top + bottom + data.length * rowH;
+    var plotX = labelW;
+    var plotW = Math.max(40, width - labelW - rightW);
+    var max = opts.max || niceMax(Math.max.apply(null, data.map(function (d) { return d.value; }).concat([0])) * 1.04);
+    var valueFmt = opts.valueFmt || function (v) { return num(v, opts.decimals || 0); };
+
+    var svg = "";
+    /* gridlines */
+    for (var g = 0; g <= 4; g++) {
+      var gx = plotX + (plotW * g) / 4;
+      svg += '<line x1="' + gx.toFixed(1) + '" y1="' + top + '" x2="' + gx.toFixed(1) + '" y2="' +
+        (height - bottom) + '" stroke="' + C.grid + '" stroke-width="1"' + (g === 0 ? "" : ' stroke-dasharray="3 4"') + "/>";
+    }
+
+    data.forEach(function (d, i) {
+      var y = top + i * rowH;
+      var cy = y + rowH / 2;
+      var w = Math.max(2, (Math.max(0, d.value) / max) * plotW);
+      var color = d.color || C.green;
+      svg += text(labelW - 14, cy + 4, d.label, { anchor: "end", fill: C.ink, size: 12.5, weight: 600 });
+      svg += '<rect x="' + plotX + '" y="' + (cy - barH / 2) + '" width="' + plotW + '" height="' + barH +
+        '" rx="' + (barH / 2) + '" fill="' + C.track + '"/>';
+      svg += '<rect x="' + plotX + '" y="' + (cy - barH / 2) + '" width="' + w.toFixed(1) + '" height="' + barH +
+        '" rx="' + (barH / 2) + '" fill="' + color + '"><title>' + esc(d.label + ": " + valueFmt(d.value) + (opts.unit ? " " + opts.unit : "")) + "</title></rect>";
+      if (d.sub) svg += text(labelW - 14, cy + 18, d.sub, { anchor: "end", fill: C.muted, size: 10.5, weight: 500 });
+      svg += text(plotX + w + 10, cy + 4, valueFmt(d.value), { fill: C.greenDark, size: 12, weight: 700 });
+    });
+
+    return wrap(svg, width, height, opts.ariaLabel || "Bar chart");
+  }
+
+  /* ---------------------------------------------------------------------
+   * Range bar chart (estimate ranges — honest about uncertainty)
+   * opts: { rows:[{label,min,max,mid?}], width, unit, valueFmt, ariaLabel }
+   * ------------------------------------------------------------------- */
+  function rangeBarChart(opts) {
+    opts = opts || {};
+    var rows = opts.rows || [];
+    var width = opts.width || 720;
+    var labelW = opts.labelWidth || 118;
+    var rightW = opts.rightW || 132;
+    var rowH = opts.rowH || 38;
+    var barH = opts.barH || 14;
+    var top = 26;
+    var bottom = 12;
+    var height = top + bottom + rows.length * rowH;
+    var plotX = labelW;
+    var plotW = Math.max(60, width - labelW - rightW);
+
+    var lo = 0, hi = 0;
+    rows.forEach(function (r) {
+      lo = Math.min(lo, Number(r.min) || 0);
+      hi = Math.max(hi, Number(r.max) || 0);
+    });
+    if (hi === 0) hi = 1;
+    var span = hi - lo || 1;
+    function x(v) { return plotX + ((v - lo) / span) * plotW; }
+    var valueFmt = opts.valueFmt || function (v) { return compactINR(v); };
+
+    var svg = "";
+    /* zero line + ticks */
+    var ticks = 4;
+    for (var g = 0; g <= ticks; g++) {
+      var vv = lo + (span * g) / ticks;
+      var gx = x(vv);
+      svg += '<line x1="' + gx.toFixed(1) + '" y1="' + top + '" x2="' + gx.toFixed(1) + '" y2="' +
+        (height - bottom) + '" stroke="' + C.grid + '" stroke-width="1"' + (g === 0 ? "" : ' stroke-dasharray="3 4"') + "/>";
+      svg += text(gx, 14, valueFmt(vv), { anchor: "middle", fill: C.muted, size: 10.5, weight: 500 });
+    }
+    if (lo < 0) {
+      svg += '<line x1="' + x(0).toFixed(1) + '" y1="' + (top - 4) + '" x2="' + x(0).toFixed(1) + '" y2="' +
+        (height - bottom) + '" stroke="' + C.muted + '" stroke-width="1.2"/>';
+    }
+
+    rows.forEach(function (r, i) {
+      var cy = top + i * rowH + rowH / 2;
+      var x1 = Math.min(x(r.min), x(r.max));
+      var x2 = Math.max(x(r.min), x(r.max));
+      var w = Math.max(3, x2 - x1);
+      var mid = r.mid != null ? r.mid : (Number(r.min) + Number(r.max)) / 2;
+      var color = r.color || C.green;
+      svg += text(labelW - 12, cy + 4, r.label, { anchor: "end", fill: C.ink, size: 12, weight: 600 });
+      svg += '<rect x="' + x1.toFixed(1) + '" y="' + (cy - barH / 2) + '" width="' + w.toFixed(1) + '" height="' + barH +
+        '" rx="' + (barH / 2) + '" fill="' + color + '" opacity="0.9"><title>' +
+        esc(r.label + ": " + valueFmt(r.min) + " \u2013 " + valueFmt(r.max)) + "</title></rect>";
+      svg += '<rect x="' + (x(mid) - 1.5).toFixed(1) + '" y="' + (cy - barH / 2 - 3) + '" width="3" height="' + (barH + 6) +
+        '" rx="1.5" fill="' + C.white + '" stroke="' + C.greenDark + '" stroke-width="1"/>';
+      svg += text(width - 8, cy + 4, valueFmt(r.min) + " \u2013 " + valueFmt(r.max), { anchor: "end", fill: C.greenDark, size: 11, weight: 700 });
+    });
+
+    return wrap(svg, width, height, opts.ariaLabel || "Estimate range chart");
+  }
+
+  /* ---------------------------------------------------------------------
+   * Line + area chart with true spacing by year
+   * opts: { points:[{x:number,y:number,label:string}], width, height,
+   *         unit, yFmt, ariaLabel }
+   * ------------------------------------------------------------------- */
+  function lineChart(opts) {
+    opts = opts || {};
+    var pts = (opts.points || []).slice();
+    var width = opts.width || 760;
+    var height = opts.height || 300;
+    var top = 30, right = 22, bottom = 44, left = 58;
+    var plotW = Math.max(40, width - left - right);
+    var plotH = Math.max(40, height - top - bottom);
+
+    var xs = pts.map(function (p) { return Number(p.x); });
+    var ys = pts.map(function (p) { return Number(p.y); });
+    var xMin = Math.min.apply(null, xs), xMax = Math.max.apply(null, xs);
+    if (xMin === xMax) { xMin -= 1; xMax += 1; }
+    var yMax = niceMax(Math.max.apply(null, ys.concat([0])) * 1.08);
+    var yMin = 0;
+
+    function X(v) { return left + ((v - xMin) / (xMax - xMin)) * plotW; }
+    function Y(v) { return top + plotH - ((v - yMin) / (yMax - yMin)) * plotH; }
+    var yFmt = opts.yFmt || function (v) { return num(v, 0); };
+
+    var svg = "";
+    var ticks = 4;
+    for (var g = 0; g <= ticks; g++) {
+      var vv = yMin + ((yMax - yMin) * g) / ticks;
+      var gy = Y(vv);
+      svg += '<line x1="' + left + '" y1="' + gy.toFixed(1) + '" x2="' + (width - right) + '" y2="' + gy.toFixed(1) +
+        '" stroke="' + C.grid + '" stroke-width="1"' + (g === 0 ? "" : ' stroke-dasharray="3 4"') + "/>";
+      svg += text(left - 10, gy + 4, yFmt(vv), { anchor: "end", fill: C.muted, size: 10.5, weight: 500 });
+    }
+
+    /* area */
+    var line = pts.map(function (p, i) { return (i ? "L" : "M") + X(Number(p.x)).toFixed(1) + " " + Y(Number(p.y)).toFixed(1); }).join(" ");
+    var area = line + " L" + X(xMax).toFixed(1) + " " + Y(yMin).toFixed(1) + " L" + X(xMin).toFixed(1) + " " + Y(yMin).toFixed(1) + " Z";
+    var gid = "agriGrad" + Math.random().toString(36).slice(2, 8);
+    svg += '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1">' +
+      '<stop offset="0%" stop-color="' + C.green + '" stop-opacity="0.28"/>' +
+      '<stop offset="100%" stop-color="' + C.green + '" stop-opacity="0.02"/>' +
+      "</linearGradient></defs>";
+    svg += '<path d="' + area + '" fill="url(#' + gid + ')"/>';
+    svg += '<path d="' + line + '" fill="none" stroke="' + C.green + '" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>';
+
+    pts.forEach(function (p) {
+      var px = X(Number(p.x)), py = Y(Number(p.y));
+      svg += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="5.5" fill="' + C.white +
+        '" stroke="' + C.greenDark + '" stroke-width="2.4"><title>' +
+        esc(p.label + ": " + yFmt(p.y) + (opts.unit ? " " + opts.unit : "")) + "</title></circle>";
+      svg += text(px, py - 14, yFmt(p.y), { anchor: "middle", fill: C.greenDark, size: 11.5, weight: 700 });
+      svg += text(px, height - 20, p.label, { anchor: "middle", fill: C.muted, size: 10.5, weight: 500 });
+    });
+
+    return wrap(svg, width, height, opts.ariaLabel || "Line chart");
+  }
+
+  /* ---------------------------------------------------------------------
+   * Donut chart + legend (used for the cost breakdown)
+   * opts: { segments:[{label,value}], width, height, totalLabel, ariaLabel }
+   * ------------------------------------------------------------------- */
+  function polar(cx, cy, r, deg) {
+    var a = (deg - 90) * Math.PI / 180;
+    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  }
+
+  function donut(opts) {
+    opts = opts || {};
+    var segs = (opts.segments || []).filter(function (s) { return Number(s.value) > 0; });
+    var width = opts.width || 540;
+    var height = opts.height || 250;
+    var cx = 132, cy = height / 2, rOut = 86, rIn = 58;
+    var total = segs.reduce(function (a, s) { return a + Number(s.value); }, 0) || 1;
+    var colors = opts.colors || [C.greenDark, C.green, C.greenMid, C.amber, C.greenLight, C.muted];
+
+    var svg = "";
+    var start = 0;
+    if (segs.length === 1) {
+      var one = segs[0];
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="' + ((rOut + rIn) / 2) + '" fill="none" stroke="' +
+        (one.color || colors[0]) + '" stroke-width="' + (rOut - rIn) + '"><title>' +
+        esc(one.label + ": " + num(one.value)) + "</title></circle>";
+    } else {
+      segs.forEach(function (s, i) {
+        var angle = (Number(s.value) / total) * 360;
+        var end = start + angle;
+        if (angle >= 359.99) angle = 359.99;
+        var large = (end - start) > 180 ? 1 : 0;
+        var p1 = polar(cx, cy, rOut, start), p2 = polar(cx, cy, rOut, end);
+        var p3 = polar(cx, cy, rIn, end), p4 = polar(cx, cy, rIn, start);
+        var d = "M" + p1[0].toFixed(2) + " " + p1[1].toFixed(2) +
+          " A" + rOut + " " + rOut + " 0 " + large + " 1 " + p2[0].toFixed(2) + " " + p2[1].toFixed(2) +
+          " L" + p3[0].toFixed(2) + " " + p3[1].toFixed(2) +
+          " A" + rIn + " " + rIn + " 0 " + large + " 0 " + p4[0].toFixed(2) + " " + p4[1].toFixed(2) + " Z";
+        svg += '<path d="' + d + '" fill="' + (s.color || colors[i % colors.length]) + '"><title>' +
+          esc(s.label + ": " + num(s.value) + " (" + Math.round((s.value / total) * 100) + "%)") + "</title></path>";
+      });
+    }
+
+    svg += text(cx, cy - 4, opts.totalLabel || "", { anchor: "middle", fill: C.muted, size: 11, weight: 600 });
+    svg += text(cx, cy + 16, opts.totalValue || "", { anchor: "middle", fill: C.greenDark, size: 15, weight: 800 });
+
+    var lx = 252;
+    var rowH = 34;
+    var ly = Math.max(18, cy - (segs.length * rowH) / 2);
+    segs.forEach(function (s, i) {
+      var y = ly + i * rowH;
+      var col = s.color || colors[i % colors.length];
+      svg += '<rect x="' + lx + '" y="' + (y - 8) + '" width="12" height="12" rx="3" fill="' + col + '"/>';
+      svg += text(lx + 20, y + 2, s.label, { fill: C.ink, size: 11.5, weight: 600 });
+      svg += text(width - 15, y + 2, Math.round((s.value / total) * 100) + "%", { anchor: "end", fill: C.muted, size: 11, weight: 600 });
+      if (s.valueLabel) svg += text(lx + 20, y + 16, s.valueLabel, { fill: C.muted, size: 10, weight: 500 });
+    });
+
+    return wrap(svg, width, height, opts.ariaLabel || "Donut chart");
+  }
+
+  window.AgriCharts = {
+    barChart: barChart,
+    rangeBarChart: rangeBarChart,
+    lineChart: lineChart,
+    donut: donut,
+    compactINR: compactINR,
+    formatNumber: num,
+    colors: C
+  };
+})();
+
+/* ==================== js/services/cropDiseaseService.js ==================== */
+/* ==========================================================================
+   AgriHealthAI — cropDiseaseService
+   Reference-based crop health screening.
+
+   HONESTY RULES
+   - A single photo cannot confirm a crop disease. This service never claims a
+     diagnosis. It shows the common diseases/disorders for the selected crop
+     and ranks them against symptoms the farmer actually ticks.
+   - It measures only real, transparent image properties (brightness, contrast,
+     detail, green/warm/dark area) to give photo-quality feedback.
+   - It never gives chemical doses. Recovery steps are cultural/physical and
+     always point to the local KVK / extension officer for confirmation.
+   ========================================================================== */
+(function () {
+  "use strict";
+
+  var ref = window.AgriReference;
+  var MAX_BYTES = 6 * 1024 * 1024;
+  var TYPES = ["image/jpeg", "image/png", "image/webp"];
+
+  function readAsDataURL(file) {
+    return new Promise(function (resolve, reject) {
+      var fr = new FileReader();
+      fr.onload = function () { resolve(fr.result); };
+      fr.onerror = function () { reject(new Error("read-failed")); };
+      fr.readAsDataURL(file);
+    });
+  }
+
+  function loadImage(src) {
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () { resolve(img); };
+      img.onerror = function () { reject(new Error("image-decode-failed")); };
+      img.src = src;
+    });
+  }
+
+  /* ---------- real image measurement ---------- */
+  function measure(img) {
+    var size = 96;
+    var canvas = document.createElement("canvas");
+    canvas.width = size;
+    canvas.height = size;
+    var ctx = canvas.getContext("2d", { willReadFrequently: true });
+    if (!ctx) return null;
+    ctx.drawImage(img, 0, 0, size, size);
+    var data;
+    try { data = ctx.getImageData(0, 0, size, size).data; } catch (e) { return null; }
+
+    var n = size * size;
+    var lum = new Float32Array(n);
+    var sum = 0, green = 0, warm = 0, dark = 0, satSum = 0;
+    for (var i = 0, p = 0; i < n; i++, p += 4) {
+      var r = data[p], g = data[p + 1], b = data[p + 2];
+      var l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      lum[i] = l;
+      sum += l;
+      if (l < 55) dark++;
+      if (g > r * 1.06 && g > b * 1.06 && g > 45) green++;
+      if (r > 105 && r > b + 22 && g > 55 && b < 125 && r >= g - 12) warm++;
+      var mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+      satSum += mx ? (mx - mn) / mx : 0;
+    }
+
+    var mean = sum / n;
+    var variance = 0;
+    for (var j = 0; j < n; j++) { var d = lum[j] - mean; variance += d * d; }
+    variance /= n;
+
+    /* simple edge energy (mean absolute neighbour difference) */
+    var edge = 0, edgeN = 0;
+    for (var y = 0; y < size; y++) {
+      for (var x = 0; x < size - 1; x++) {
+        var idx = y * size + x;
+        edge += Math.abs(lum[idx + 1] - lum[idx]);
+        edgeN++;
+      }
+    }
+    for (var yy = 0; yy < size - 1; yy++) {
+      for (var xx = 0; xx < size; xx++) {
+        var id2 = yy * size + xx;
+        edge += Math.abs(lum[id2 + size] - lum[id2]);
+        edgeN++;
+      }
+    }
+
+    return {
+      brightness: Math.round((mean / 255) * 100),
+      contrast: Math.round((Math.sqrt(variance) / 128) * 100),
+      detail: +((edge / edgeN) * 4).toFixed(1),
+      saturation: Math.round((satSum / n) * 100),
+      greenPct: Math.round((green / n) * 100),
+      warmPct: Math.round((warm / n) * 100),
+      darkPct: Math.round((dark / n) * 100)
+    };
+  }
+
+  /* ---------- quality gate ---------- */
+  function photoQuality(stats) {
+    if (!stats) return "unknown";
+    if (stats.brightness < 20 || stats.contrast < 8) return "lowLight";
+    if (stats.brightness > 88 && stats.contrast < 10) return "washed";
+    if (stats.detail < 2.2) return "blurry";
+    return "good";
+  }
+
+  /* ---------- reference lookup ---------- */
+  function listForCrop(cropId) {
+    var all = ref.CROP_DISEASES || [];
+    return all.filter(function (d) {
+      return d.crops === "all" || (Array.isArray(d.crops) && d.crops.indexOf(cropId) !== -1);
+    });
+  }
+
+  function symptomsForCrop(cropId) {
+    var seen = {}, out = [];
+    listForCrop(cropId).forEach(function (d) {
+      d.symptoms.forEach(function (s) {
+        if (!seen[s.en]) { seen[s.en] = 1; out.push({ key: s.en, label: s }); }
+      });
+    });
+    return out;
+  }
+
+  function rank(cropId, selectedKeys) {
+    var set = {};
+    (selectedKeys || []).forEach(function (k) { set[k] = true; });
+    var list = listForCrop(cropId).map(function (d) {
+      var matched = d.symptoms.filter(function (s) { return set[s.en]; });
+      return {
+        disease: d,
+        matched: matched,
+        score: matched.length ? Math.round((matched.length / d.symptoms.length) * 100) : null
+      };
+    });
+    list.sort(function (a, b) {
+      if (a.score != null && b.score != null && b.score !== a.score) return b.score - a.score;
+      if (a.score != null && b.score == null) return -1;
+      if (b.score != null && a.score == null) return 1;
+      return 0;
+    });
+    return list;
+  }
+
+  /* ---------- local screening result ---------- */
+  function localResult(cropId, stats) {
+    var quality = photoQuality(stats);
+    return {
+      demo: true,
+      source: "local-reference",
+      cropId: cropId,
+      imageStats: stats,
+      quality: quality,
+      possible: listForCrop(cropId),
+      symptoms: symptomsForCrop(cropId),
+      note: {
+        en: "Common possibilities for this crop, from general reference data. A photo cannot confirm a disease — tick the symptoms you can see and confirm with your KVK.",
+        hi: "सामान्य संदर्भ डेटा से इस फसल की आम संभावनाएँ। फ़ोटो से रोग की पुष्टि नहीं होती — जो लक्षण दिखें उन्हें चुनें और KVK से पुष्टि करें।"
+      }
+    };
+  }
+
+  /* ---------- public: analyse ----------
+   * Screening is intentionally local: the ranked result depends on the
+   * reference dataset plus the symptoms the farmer ticks. No photo leaves the
+   * device and no diagnosis is claimed. A trained vision model could be wired
+   * in here later, but only with an honest confidence score.
+   */
+  function analyze(file, cropId) {
+    if (!file) return Promise.reject(new Error("no-file"));
+    if (TYPES.indexOf(file.type) === -1) return Promise.reject(new Error("invalid-type"));
+    if (file.size > MAX_BYTES) return Promise.reject(new Error("too-large"));
+
+    return readAsDataURL(file).then(function (dataUrl) {
+      return loadImage(dataUrl).then(function (img) {
+        return localResult(cropId, measure(img));
+      });
+    });
+  }
+
+  window.cropDiseaseService = {
+    analyze: analyze,
+    listForCrop: listForCrop,
+    symptomsForCrop: symptomsForCrop,
+    rank: rank,
+    photoQuality: photoQuality,
+    MAX_BYTES: MAX_BYTES,
+    TYPES: TYPES
+  };
+})();
+
 /* ==================== js/services/cropService.js ==================== */
 /* ==========================================================================
    AgriHealthAI — cropService
@@ -2967,9 +4364,10 @@ window.I18N = {
 /* ==========================================================================
    AgriHealthAI — foodVisionService
    Food image analysis. DEMO MODE performs only a transparent LOCAL
-   measurement (image quality / colour statistics) and returns an honest
-   "Unable to Determine" result — it does NOT pretend to identify food or
-   detect spoilage. Connect a vision model on the backend for real analysis.
+   measurement (image quality / colour statistics) and returns an honest,
+   rule-based VISUAL STATUS (clear / check / unknown). It does NOT pretend to
+   identify the food or to be a food-safety test. Connect a vision model on the
+   backend for real analysis.
    ========================================================================== */
 (function () {
   "use strict";
@@ -2992,47 +4390,117 @@ window.I18N = {
     });
   }
 
-  /** Real, objective local measurement — not a food claim. */
+  /** Real, objective local measurement of the centre of the photo — not a food claim. */
   function measureImage(img) {
     var w = 96, h = 96;
     var canvas = document.createElement("canvas");
     canvas.width = w; canvas.height = h;
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0, w, h);
+    var ctx = canvas.getContext("2d", { willReadFrequently: true });
+    if (!ctx) return null;
+    /* sample the middle 70% so the plate/background does not dominate */
+    var sx = img.width * 0.15, sy = img.height * 0.15;
+    var sw = Math.max(1, img.width * 0.70), sh = Math.max(1, img.height * 0.70);
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
     var data;
     try { data = ctx.getImageData(0, 0, w, h).data; } catch (e) { return null; }
-    var rSum = 0, gSum = 0, bSum = 0, lum = 0, n = w * h;
-    for (var i = 0; i < data.length; i += 4) {
-      rSum += data[i]; gSum += data[i + 1]; bSum += data[i + 2];
-      lum += (0.2126 * data[i] + 0.7152 * data[i + 1] + 0.0722 * data[i + 2]);
+
+    var n = w * h;
+    var rSum = 0, gSum = 0, bSum = 0, lumSum = 0;
+    var lumArr = new Float32Array(n);
+    var green = 0, brown = 0, yellow = 0, dark = 0;
+    for (var i = 0, p = 0; i < n; i++, p += 4) {
+      var r = data[p], g = data[p + 1], b = data[p + 2];
+      rSum += r; gSum += g; bSum += b;
+      var l = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      lumArr[i] = l;
+      lumSum += l;
+      if (l < 58) dark++;
+      if (g > r * 1.05 && g > b * 1.05 && g > 50) green++;
+      if (r > 165 && g > 135 && b < 115 && Math.abs(r - g) < 55) yellow++;
+      if (r > 85 && r < 215 && g > 38 && g < 155 && b < 110 && r > g + 15 && g >= b + 4) brown++;
     }
-    var r = rSum / n, g = gSum / n, b = bSum / n;
-    var brightness = Math.round((lum / n) / 255 * 100);
+    var mr = rSum / n, mg = gSum / n, mb = bSum / n;
+    var mean = lumSum / n;
+    var variance = 0;
+    for (var j = 0; j < n; j++) { var d = lumArr[j] - mean; variance += d * d; }
+    variance /= n;
+
     var dominant = "neutral";
-    if (r > g + 18 && r > b + 18) dominant = "reddish";
-    else if (g > r + 14 && g > b + 14) dominant = "greenish";
-    else if (b > r + 14 && b > g + 10) dominant = "bluish";
-    else if (r > 150 && g > 130 && b < 110) dominant = "yellowish";
-    else if (r > 180 && g > 180 && b > 180) dominant = "light";
+    if (mr > mg + 18 && mr > mb + 18) dominant = "reddish";
+    else if (mg > mr + 14 && mg > mb + 14) dominant = "greenish";
+    else if (mb > mr + 14 && mb > mg + 10) dominant = "bluish";
+    else if (mr > 155 && mg > 135 && mb < 115) dominant = "yellowish";
+    else if (mr > 180 && mg > 180 && mb > 180) dominant = "light";
+
     return {
-      brightness: brightness,
+      brightness: Math.round((mean / 255) * 100),
+      contrast: Math.round((Math.sqrt(variance) / 128) * 100),
       dominant: dominant,
-      rgb: { r: Math.round(r), g: Math.round(g), b: Math.round(b) }
+      greenPct: Math.round((green / n) * 100),
+      brownPct: Math.round((brown / n) * 100),
+      yellowPct: Math.round((yellow / n) * 100),
+      darkPct: Math.round((dark / n) * 100),
+      rgb: { r: Math.round(mr), g: Math.round(mg), b: Math.round(mb) }
     };
   }
 
+  /** Transparent rule-based visual status from the measured properties. */
+  function visualStatus(stats) {
+    if (!stats) return "unknown";
+    if (stats.brightness < 18 || stats.contrast < 7) return "unknown";
+    if (stats.brightness > 90 && stats.contrast < 9) return "unknown";
+    if (stats.darkPct >= 30 || stats.brownPct >= 40) return "check";
+    return "clear";
+  }
+
   function demoResult(stats) {
+    var status = visualStatus(stats);
+    var reason, notes, signs = [], confidence;
+    if (status === "clear") {
+      confidence = 0.45;
+      reason = {
+        en: "No obvious visual spoilage signs in the centre of this photo.",
+        hi: "इस फ़ोटो के मध्य भाग में सड़न के स्पष्ट दृश्य संकेत नहीं दिखे।"
+      };
+      notes = [
+        { en: "Visual check only — the food was not identified, because no vision model is connected.", hi: "केवल दृश्य जाँच — भोजन की पहचान नहीं हुई, क्योंकि कोई विज़न मॉडल जुड़ा नहीं है।" },
+        { en: "A clear photo does not prove the food is safe. Always check smell, texture and the use-by date.", hi: "साफ़ फ़ोटो भोजन के सुरक्षित होने का प्रमाण नहीं है। गंध, बनावट और एक्सपायरी तिथि अवश्य जाँचें।" }
+      ];
+    } else if (status === "check") {
+      confidence = 0.4;
+      reason = {
+        en: "Large dark or brown areas were measured — this may be shadow, natural browning, or spoilage.",
+        hi: "बड़े गहरे या भूरे क्षेत्र मापे गए — यह छाया, प्राकृतिक भूरापन या सड़न हो सकता है।"
+      };
+      notes = [
+        { en: "Check the food closely before eating: look for mould, smell for off odours and feel for slime.", hi: "खाने से पहले भोजन ध्यान से जाँचें: फफूंद देखें, बदबू सूँघें और चिपचिपाहट महसूस करें।" },
+        { en: "If anything seems doubtful, discard it. Do not taste food to check if it is safe.", hi: "कुछ भी संदिग्ध लगे तो फेंक दें। सुरक्षित है या नहीं, यह जानने के लिए चखें नहीं।" }
+      ];
+      signs = [
+        { en: "A large dark/brown area was measured in the photo centre.", hi: "फ़ोटो के मध्य में बड़ा गहरा/भूरा क्षेत्र मापा गया।" }
+      ];
+    } else {
+      confidence = 0.2;
+      reason = {
+        en: "The photo is too dark, too bright or too flat for a visual check.",
+        hi: "फ़ोटो दृश्य जाँच के लिए बहुत गहरी, बहुत चमकीली या बहुत फीकी है।"
+      };
+      notes = [
+        { en: "Retake the photo in even daylight, close to the food, with the whole portion in frame.", hi: "भोजन के पास, एक समान दिन की रोशनी में, पूरा हिस्सा फ्रेम में रखकर फ़ोटो दोबारा लें।" },
+        { en: "No freshness conclusion can be drawn from this photo.", hi: "इस फ़ोटो से ताज़गी का कोई निष्कर्ष नहीं निकाला जा सकता।" }
+      ];
+    }
+
     return {
       demo: true,
       source: "local-demo-vision",
-      status: "unknown", // fresh | spoilage | unknown
-      confidence: 0.25,
+      status: status, // clear | check | unknown
+      statusReason: reason,
+      confidence: confidence,
       likelyFood: null,
       candidates: [],
-      freshnessNotes: [
-        { en: "No vision model is connected, so freshness could not be assessed.", hi: "कोई विज़न मॉडल जुड़ा नहीं है, इसलिए ताज़गी का आकलन नहीं हो सका।" }
-      ],
-      spoilageSigns: [],
+      freshnessNotes: notes,
+      spoilageSigns: signs,
       storage: {
         en: "General guidance: keep fresh food cool and covered, refrigerate perishables, and follow the label for packaged food.",
         hi: "सामान्य सलाह: ताज़ा भोजन ठंडा व ढककर रखें, जल्दी खराब होने वाली चीज़ें फ्रिज में रखें, और पैक्ड भोजन पर लेबल देखें।"
@@ -3453,6 +4921,14 @@ window.I18N = {
     activeCropId: null
   };
 
+  var dz = {
+    file: null,
+    previewUrl: null,
+    result: null,
+    cropId: "",
+    selected: []
+  };
+
   /* ---------- selects ---------- */
   function fillSelect(sel, list, selectedId, placeholder) {
     if (!sel) return;
@@ -3613,10 +5089,144 @@ window.I18N = {
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>' +
         '<h3>' + esc(t("agri.noResultsTitle")) + '</h3><p>' + esc(t("agri.noResultsText")) + '</p></div>';
       count.textContent = "";
+      renderProfitChart(null);
       return;
     }
     count.textContent = t("agri.resultsCount", { count: result.crops.length });
     grid.innerHTML = result.crops.map(cropCard).join("");
+    renderProfitChart(result);
+  }
+
+  /* ---------- charts ---------- */
+  var charts = window.AgriCharts;
+
+  function renderProfitChart(result) {
+    var host = document.getElementById("profit-chart");
+    if (!host) return;
+    if (!result || !result.crops || !result.crops.length) {
+      host.classList.add("hidden");
+      host.innerHTML = "";
+      return;
+    }
+    host.classList.remove("hidden");
+    var rows = result.crops.slice(0, 8).map(function (c) {
+      return {
+        label: L(c.name),
+        min: c.financials.netProfit.min,
+        max: c.financials.netProfit.max
+      };
+    });
+    host.innerHTML =
+      '<div class="chart-card__head">' +
+        '<div><h3>' + esc(t("charts.profitTitle")) + '</h3>' +
+        '<p class="small muted">' + esc(t("charts.profitSub")) + '</p></div>' +
+        '<div class="chart-keys">' +
+          '<span class="chart-key"><i class="legend-swatch"></i>' + esc(t("charts.rangeLow")) + " \u2013 " + esc(t("charts.rangeHigh")) + '</span>' +
+          '<span class="chart-key"><i class="legend-pin"></i>' + esc(t("charts.rangeMid")) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="chart-wrap">' + charts.rangeBarChart({
+        rows: rows,
+        width: 760,
+        labelWidth: 160,
+        rightW: 150,
+        ariaLabel: t("charts.chartAriaProfit"),
+        valueFmt: charts.compactINR
+      }) + '</div>' +
+      '<p class="small muted" style="margin:10px 0 0">' + esc(t("agri.assumptionsText")) + '</p>';
+  }
+
+  function renderCostChart(f) {
+    var host = document.getElementById("plan-cost-chart");
+    if (!host) return;
+    var cb = f.costBreakdown || {};
+    function mid(x) { return x ? (x.min + x.max) / 2 : 0; }
+    var segs = [
+      { label: t("charts.costSeed"), value: mid(cb.seed), color: charts.colors.greenDark },
+      { label: t("charts.costFertiliser"), value: mid(cb.fertiliser), color: charts.colors.green },
+      { label: t("charts.costLabour"), value: mid(cb.labour), color: charts.colors.amber },
+      { label: t("charts.costIrrigation"), value: mid(cb.irrigation), color: charts.colors.greenLight }
+    ].map(function (s) {
+      s.valueLabel = window.UI.formatINR(Math.round(s.value));
+      return s;
+    });
+    var total = segs.reduce(function (a, s) { return a + s.value; }, 0);
+    host.innerHTML =
+      '<div class="chart-card__head"><div><h3>' + esc(t("charts.costTitle")) + '</h3>' +
+      '<p class="small muted">' + esc(t("charts.costSub")) + '</p></div></div>' +
+      '<div class="chart-wrap chart-wrap--fit">' + charts.donut({
+        segments: segs,
+        totalLabel: t("charts.costTotal"),
+        totalValue: charts.compactINR(total),
+        ariaLabel: t("charts.chartAriaCost")
+      }) + '</div>';
+  }
+
+  function renderOfficialData() {
+    var d = ref.OFFICIAL_AGRI;
+    var kpiHost = document.getElementById("official-kpis");
+    if (!d || !kpiHost) return;
+    var h = d.headline;
+
+    kpiHost.innerHTML = [
+      { label: t("charts.kpiFoodgrain"), value: window.UI.formatNumber(h.foodgrain2024_25, 2), unit: "Mt", sub: t("charts.millionTonnes"), primary: true },
+      { label: t("charts.kpiGrowth"), value: "+" + window.UI.formatNumber(h.growthPct, 2), unit: "%", sub: "2023-24 \u2192 2024-25" },
+      { label: t("charts.kpiRice"), value: window.UI.formatNumber(h.rice2023_24, 2), unit: "Mt", sub: t("charts.millionTonnes") },
+      { label: t("charts.kpiWheat"), value: window.UI.formatNumber(h.wheat2023_24, 2), unit: "Mt", sub: t("charts.millionTonnes") },
+      { label: t("charts.kpiOilseeds"), value: window.UI.formatNumber(h.oilseeds2023_24, 2), unit: "Mt", sub: t("charts.millionTonnes") }
+    ].map(function (k) {
+      return '<div class="kpi' + (k.primary ? " kpi--primary" : "") + '">' +
+        '<span class="kpi__label">' + esc(k.label) + '</span>' +
+        '<strong class="kpi__value">' + esc(k.value) + '<small>' + esc(k.unit) + '</small></strong>' +
+        '<span class="kpi__sub">' + esc(k.sub) + '</span></div>';
+    }).join("");
+
+    var trend = document.getElementById("official-trend");
+    if (trend) {
+      var points = d.trend.map(function (p) {
+        return { x: parseInt(String(p.year).slice(0, 4), 10), y: p.value, label: p.year };
+      });
+      trend.innerHTML =
+        '<div class="chart-card__head"><div><h3>' + esc(t("charts.trendTitle")) + '</h3>' +
+        '<p class="small muted">' + esc(t("charts.trendSub")) + '</p></div></div>' +
+        '<div class="chart-wrap">' + charts.lineChart({
+          points: points,
+          width: 760,
+          height: 300,
+          unit: t("charts.millionTonnes"),
+          yFmt: function (v) { return window.UI.formatNumber(v, 0); },
+          ariaLabel: t("charts.chartAriaTrend")
+        }) + '</div>';
+    }
+
+    var mix = document.getElementById("official-mix");
+    if (mix) {
+      mix.innerHTML =
+        '<div class="chart-card__head"><div><h3>' + esc(t("charts.mixTitle")) + '</h3>' +
+        '<p class="small muted">' + esc(t("charts.mixSub")) + '</p></div></div>' +
+        '<div class="chart-wrap">' + charts.barChart({
+          data: d.cropMix2023_24.map(function (m) { return { label: L(m.label), value: m.value }; }),
+          width: 720,
+          labelWidth: 150,
+          rightW: 88,
+          unit: t("charts.lakhTonnes"),
+          valueFmt: function (v) { return window.UI.formatNumber(v, 0); },
+          ariaLabel: t("charts.chartAriaMix")
+        }) + '</div>';
+    }
+
+    var sources = document.getElementById("official-sources");
+    if (sources) {
+      sources.innerHTML =
+        '<div class="data-source-card__head">' +
+          '<h3>' + esc(t("charts.sources")) + '</h3>' +
+          '<span class="badge badge--muted">' + esc(t("charts.updated")) + ': ' + esc(d.updated) + '</span>' +
+        '</div>' +
+        '<ul class="source-list">' + d.sources.map(function (s) {
+          return '<li><a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(L(s.label)) + '</a></li>';
+        }).join("") + '</ul>' +
+        '<p class="small muted" style="margin:10px 0 0">' + esc(t("charts.sourceNote")) + ' ' + esc(t("charts.dataDisclaimer")) + '</p>';
+    }
   }
 
   /* ---------- compare ---------- */
@@ -3721,6 +5331,7 @@ window.I18N = {
           '<div class="stat"><span class="stat__label">' + esc(t("agri.totalCost")) + '</span><span class="stat__value">' + esc(window.UI.formatRange(f.totalCost.min, f.totalCost.max, window.UI.formatINR)) + '</span></div>' +
           '<div class="stat"><span class="stat__label">' + esc(t("agri.netProfit")) + '</span><span class="stat__value">' + esc(window.UI.formatRange(f.netProfit.min, f.netProfit.max, window.UI.formatINR)) + '</span></div>' +
         '</div>' +
+        '<div class="chart-card" id="plan-cost-chart" style="margin-bottom:30px"></div>' +
         '<div class="notice notice--info" style="margin-bottom:30px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>' + esc(t("agri.assumptionsText")) + '</span></div>' +
 
         '<div class="section-head left" style="margin-bottom:14px"><h3>' + esc(t("agri.planTitle")) + '</h3><p class="muted">' + esc(t("agri.planIntro")) + '</p></div>' +
@@ -3766,6 +5377,7 @@ window.I18N = {
     });
     document.getElementById("plan-startover").addEventListener("click", startOver);
 
+    renderCostChart(f);
     section.scrollIntoView({ behavior: "smooth" });
   }
 
@@ -3805,6 +5417,259 @@ window.I18N = {
     lines.push("");
     lines.push(t("agri.expertNote"));
     window.UI.download("agrihealthai-" + c.id + "-plan.txt", lines.join("\r\n"));
+  }
+
+  /* ---------- crop disease screening ---------- */
+  var dzState = dz;
+  var dzService = window.cropDiseaseService;
+
+  function fillDiseaseCrops() {
+    var sel = document.getElementById("d-crop");
+    if (!sel) return;
+    var html = '<option value="">' + esc(t("disease.cropPlaceholder")) + "</option>";
+    ref.CROPS.forEach(function (c) {
+      html += '<option value="' + c.id + '"' + (c.id === dzState.cropId ? " selected" : "") + ">" + esc(L(c.name)) + "</option>";
+    });
+    sel.innerHTML = html;
+  }
+
+  function setDzFile(file) {
+    if (!file) return;
+    var input = document.getElementById("d-file");
+    if (dzService.TYPES.indexOf(file.type) === -1) {
+      if (input) input.value = "";
+      window.UI.toast(t("disease.errorType"), "error");
+      return;
+    }
+    if (file.size > dzService.MAX_BYTES) {
+      if (input) input.value = "";
+      window.UI.toast(t("disease.errorSize"), "error");
+      return;
+    }
+    dzState.file = file;
+    if (dzState.previewUrl) URL.revokeObjectURL(dzState.previewUrl);
+    dzState.previewUrl = URL.createObjectURL(file);
+    var img = document.getElementById("d-preview-img");
+    img.src = dzState.previewUrl;
+    img.alt = t("disease.choosePhoto") + ": " + file.name;
+    document.getElementById("d-upload-area").classList.add("hidden");
+    document.getElementById("d-preview-area").classList.remove("hidden");
+    document.getElementById("d-loading").classList.add("hidden");
+    document.getElementById("d-result").classList.add("hidden");
+    document.getElementById("d-empty").classList.remove("hidden");
+    dzState.result = null;
+    dzState.selected = [];
+  }
+
+  function clearDzFile() {
+    dzState.file = null;
+    if (dzState.previewUrl) URL.revokeObjectURL(dzState.previewUrl);
+    dzState.previewUrl = null;
+    dzState.result = null;
+    dzState.selected = [];
+    var input = document.getElementById("d-file");
+    if (input) input.value = "";
+    var img = document.getElementById("d-preview-img");
+    if (img) img.removeAttribute("src");
+    document.getElementById("d-preview-area").classList.add("hidden");
+    document.getElementById("d-upload-area").classList.remove("hidden");
+    document.getElementById("d-result").classList.add("hidden");
+    document.getElementById("d-empty").classList.remove("hidden");
+    document.getElementById("d-loading").classList.add("hidden");
+  }
+
+  function analyseDz() {
+    if (!dzState.file) { window.UI.toast(t("disease.noPhoto"), "error"); return; }
+    var sel = document.getElementById("d-crop");
+    var cropId = sel ? sel.value : "";
+    if (!cropId) {
+      window.UI.toast(t("disease.noCrop"), "error");
+      if (sel) { sel.focus(); sel.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      return;
+    }
+    dzState.cropId = cropId;
+    document.getElementById("d-loading").classList.remove("hidden");
+    document.getElementById("d-empty").classList.add("hidden");
+    document.getElementById("d-result").classList.add("hidden");
+
+    dzService.analyze(dzState.file, cropId).then(function (res) {
+      dzState.result = res;
+      dzState.selected = [];
+      document.getElementById("d-loading").classList.add("hidden");
+      renderDiseaseResult();
+    }).catch(function (err) {
+      document.getElementById("d-loading").classList.add("hidden");
+      document.getElementById("d-empty").classList.remove("hidden");
+      var key = err && err.message === "invalid-type" ? "disease.errorType"
+        : err && err.message === "too-large" ? "disease.errorSize" : "disease.errorAnalysis";
+      window.UI.toast(t(key), "error");
+    });
+  }
+
+  function kindKey(kind) {
+    var map = { fungal: "Fungal", bacterial: "Bacterial", viral: "Viral", insect: "Insect", disorder: "Disorder" };
+    return "disease.kind" + (map[kind] || "Disorder");
+  }
+  function qualityKey(q) {
+    var map = { good: "Good", lowLight: "LowLight", washed: "Washed", blurry: "Blurry", unknown: "Unknown" };
+    return "disease.quality" + (map[q] || "Unknown");
+  }
+
+  function renderDiseaseResult() {
+    var box = document.getElementById("d-result");
+    var empty = document.getElementById("d-empty");
+    if (!box || !dzState.result) return;
+    var res = dzState.result;
+    var crop = ref.CROPS.filter(function (c) { return c.id === res.cropId; })[0];
+    var cropName = crop ? L(crop.name) : res.cropId;
+    empty.classList.add("hidden");
+    box.classList.remove("hidden");
+
+    var stats = res.imageStats;
+    var possible = (res.possible || []).map(function (d) {
+      return '<div class="possible-item">' +
+        '<span class="kind kind--' + d.kind + '">' + esc(t(kindKey(d.kind))) + '</span>' +
+        '<div><strong>' + esc(L(d.name)) + '</strong>' +
+        '<p class="small muted" style="margin:2px 0 0">' + esc(L(d.sign)) + '</p></div>' +
+      '</div>';
+    }).join("");
+
+    var symptoms = (res.symptoms || []).map(function (s) {
+      var checked = dzState.selected.indexOf(s.key) !== -1;
+      return '<label class="check-item' + (checked ? " checked" : "") + '">' +
+        '<input type="checkbox" data-sym="' + esc(s.key) + '"' + (checked ? " checked" : "") + ">" +
+        "<span>" + esc(L(s.label)) + "</span></label>";
+    }).join("");
+
+    box.innerHTML =
+      '<div class="card"><div class="card__body">' +
+        '<div class="badge-row" style="margin-bottom:10px">' +
+          '<span class="badge badge--warn">' + esc(t("disease.demoBadge")) + '</span>' +
+          '<span class="badge badge--info">' + esc(cropName) + '</span>' +
+          '<span class="badge badge--muted">' + esc(t("disease.photoQuality")) + ": " + esc(t(qualityKey(res.quality))) + '</span>' +
+        '</div>' +
+        '<h3>' + esc(t("disease.visualTitle")) + '</h3>' +
+        '<p class="small muted">' + esc(L(res.note)) + '</p>' +
+        (stats ? '<p class="small muted" style="margin:14px 0 6px">' + esc(t("disease.measured")) + '</p>' +
+          '<div class="photo-stats" style="margin-bottom:14px">' +
+          '<div class="photo-stat"><span>' + esc(t("disease.brightness")) + '</span><strong>' + stats.brightness + '<small>%</small></strong></div>' +
+          '<div class="photo-stat"><span>' + esc(t("disease.contrast")) + '</span><strong>' + stats.contrast + '<small>%</small></strong></div>' +
+          '<div class="photo-stat"><span>' + esc(t("disease.greenArea")) + '</span><strong>' + stats.greenPct + '<small>%</small></strong></div>' +
+          '<div class="photo-stat"><span>' + esc(t("disease.warmArea")) + '</span><strong>' + stats.warmPct + '<small>%</small></strong></div>' +
+        '</div>' : "") +
+        '<h4 style="margin-top:16px">' + esc(t("disease.possibleTitle", { crop: cropName })) + '</h4>' +
+        '<p class="small muted">' + esc(t("disease.possibleIntro")) + '</p>' +
+        '<div class="possible-list">' + possible + '</div>' +
+        '<p class="small dz-consult">' + esc(t("disease.consult")) + '</p>' +
+      '</div></div>' +
+
+      '<div class="card" style="margin-top:18px"><div class="card__body">' +
+        '<h4>' + esc(t("disease.symptomTitle")) + '</h4>' +
+        '<p class="small muted">' + esc(t("disease.symptomIntro")) + '</p>' +
+        '<div class="symptom-grid">' + symptoms + '</div>' +
+        '<button class="btn btn--secondary btn--sm" type="button" id="d-reset-symptoms">' + esc(t("disease.resetSymptoms")) + '</button>' +
+      '</div></div>' +
+
+      '<div id="d-rank"></div>' +
+      '<p class="small muted" style="margin-top:14px">' + esc(t("disease.disclaimer")) + '</p>';
+
+    renderDiseaseRank();
+  }
+
+  function renderDiseaseRank() {
+    var host = document.getElementById("d-rank");
+    if (!host || !dzState.result) return;
+    var ranked = dzService.rank(dzState.cropId, dzState.selected);
+    var any = dzState.selected.length > 0;
+
+    host.innerHTML =
+      '<div class="section-head left" style="margin:24px 0 12px"><h4>' + esc(t("disease.rankTitle")) + '</h4>' +
+        (any ? "" : '<p class="small muted">' + esc(t("disease.rankNone")) + '</p>') +
+      '</div>' +
+      ranked.map(function (r) {
+        var d = r.disease;
+        var top = r.score != null && r.score >= 50;
+        var pill = r.score != null
+          ? '<span class="match-pill' + (top ? " match-pill--top" : "") + '">' + esc(t("disease.match", { score: r.score })) + '</span>'
+          : '<span class="match-pill match-pill--muted">' + esc(t("disease.common")) + '</span>';
+        var matched = r.matched.length
+          ? '<p class="small muted" style="margin:0 0 10px">' + r.matched.map(function (s) { return esc(L(s)); }).join(" \u00B7 ") + '</p>'
+          : "";
+        return '<article class="disease-card' + (top ? " disease-card--top" : "") + '">' +
+          '<div class="disease-card__head">' +
+            '<span class="kind kind--' + d.kind + '">' + esc(t(kindKey(d.kind))) + '</span>' +
+            '<h4>' + esc(L(d.name)) + '</h4>' + pill +
+          '</div>' +
+          '<p class="small" style="margin:0 0 6px"><strong>' + esc(t("disease.signs")) + ':</strong> ' + esc(L(d.sign)) + '</p>' +
+          matched +
+          '<details class="acc"' + (top ? " open" : "") + '><summary class="acc__head">' + esc(t("disease.recovery")) +
+            '<svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>' +
+          '</summary><div class="acc__body">' +
+            '<ol class="step-list">' + d.recovery.map(function (s) { return "<li>" + esc(L(s)) + "</li>"; }).join("") + '</ol>' +
+            '<p class="small" style="margin:10px 0 4px"><strong>' + esc(t("disease.prevention")) + '</strong></p>' +
+            '<ul class="small muted" style="margin:0;padding-left:18px">' + d.prevention.map(function (s) { return "<li>" + esc(L(s)) + "</li>"; }).join("") + '</ul>' +
+          '</div></details>' +
+        '</article>';
+      }).join("");
+  }
+
+  function initDisease() {
+    var drop = document.getElementById("d-dropzone");
+    var input = document.getElementById("d-file");
+    if (!drop || !input) return;
+
+    function openPicker() { input.click(); }
+    drop.addEventListener("click", openPicker);
+    drop.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPicker(); }
+    });
+    ["dragenter", "dragover"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("dragover"); });
+    });
+    ["dragleave", "drop"].forEach(function (ev) {
+      drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("dragover"); });
+    });
+    drop.addEventListener("drop", function (e) {
+      var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) setDzFile(f);
+    });
+    input.addEventListener("change", function () {
+      if (input.files && input.files[0]) setDzFile(input.files[0]);
+    });
+
+    document.getElementById("d-replace").addEventListener("click", openPicker);
+    document.getElementById("d-remove").addEventListener("click", clearDzFile);
+    document.getElementById("d-analyse").addEventListener("click", analyseDz);
+    document.getElementById("d-crop").addEventListener("change", function () {
+      dzState.cropId = this.value;
+      if (dzState.result && dzState.result.cropId !== this.value) {
+        dzState.result = null;
+        dzState.selected = [];
+        document.getElementById("d-result").classList.add("hidden");
+        document.getElementById("d-empty").classList.remove("hidden");
+      }
+    });
+
+    var result = document.getElementById("d-result");
+    result.addEventListener("change", function (e) {
+      var cb = e.target.closest ? e.target.closest("input[data-sym]") : null;
+      if (!cb) return;
+      var key = cb.getAttribute("data-sym");
+      var i = dzState.selected.indexOf(key);
+      if (cb.checked && i === -1) dzState.selected.push(key);
+      if (!cb.checked && i !== -1) dzState.selected.splice(i, 1);
+      var label = cb.closest(".check-item");
+      if (label) label.classList.toggle("checked", cb.checked);
+      renderDiseaseRank();
+    });
+    result.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest("#d-reset-symptoms")) {
+        dzState.selected = [];
+        renderDiseaseResult();
+      }
+    });
+
+    fillDiseaseCrops();
   }
 
   /* ---------- flow ---------- */
@@ -3901,10 +5766,15 @@ window.I18N = {
     if (state.plan && !document.getElementById("plan-section").classList.contains("hidden")) {
       renderPlan(state.plan);
     }
+    fillDiseaseCrops();
+    if (dzState.result) renderDiseaseResult();
+    renderOfficialData();
     document.title = t("agri.title") + " — " + t("meta.titleSuffix");
   });
 
   buildForm({});
+  initDisease();
+  renderOfficialData();
   document.title = t("agri.title") + " — " + t("meta.titleSuffix");
 
   // restore a previously saved plan on demand
@@ -4020,9 +5890,9 @@ window.I18N = {
   });
 
   function statusMeta(status) {
-    if (status === "fresh") return { key: "scanner.statusFresh", cls: "badge" };
-    if (status === "spoilage") return { key: "scanner.statusSpoil", cls: "badge badge--danger" };
-    return { key: "scanner.statusUnknown", cls: "badge badge--warn" };
+    if (status === "clear" || status === "fresh") return { key: status === "fresh" ? "scanner.statusFresh" : "scanner.statusClear", cls: "clear" };
+    if (status === "check" || status === "spoilage") return { key: status === "spoilage" ? "scanner.statusSpoil" : "scanner.statusCheck", cls: "check" };
+    return { key: "scanner.statusUnknown", cls: "unknown" };
   }
   function confidenceLabel(c) {
     if (c == null) return t("scanner.lowConfidence");
@@ -4031,32 +5901,65 @@ window.I18N = {
     return t("scanner.lowConfidence");
   }
 
+  function bannerIcon(cls) {
+    if (cls === "clear") return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+    if (cls === "check") return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>';
+  }
+
+  function statBox(label, value, unit) {
+    return '<div class="photo-stat"><span>' + esc(label) + '</span><strong>' + esc(value) + '<small>' + esc(unit) + '</small></strong></div>';
+  }
+
   function renderAnalysis(res) {
     if (!res) return;
     var sm = statusMeta(res.status);
     var freshness = (res.freshnessNotes || []).map(function (n) { return "<li>" + esc(L(n)) + "</li>"; }).join("");
     var spoilage = (res.spoilageSigns || []).map(function (n) { return "<li>" + esc(L(n)) + "</li>"; }).join("");
     var stats = res.imageStats;
+    var checklist = ["check1", "check2", "check3", "check4", "check5"].map(function (k) {
+      return "<li>" + esc(t("scanner." + k)) + "</li>";
+    }).join("");
 
     var html = '' +
       '<div class="card"><div class="card__body">' +
         '<div class="badge-row" style="margin-bottom:12px">' +
-          '<span class="' + sm.cls + '">' + esc(t(sm.key)) + '</span>' +
-          '<span class="badge badge--muted">' + esc(t("scanner.confidence")) + ": " + esc(confidenceLabel(res.confidence)) + '</span>' +
           '<span class="badge badge--warn">' + esc(t("common.demoBadge")) + '</span>' +
+          '<span class="badge badge--muted">' + esc(t("scanner.visualEstimateBadge")) + '</span>' +
+          (res.confidence != null ? '<span class="badge badge--muted">' + esc(t("scanner.confidence")) + ": " + esc(confidenceLabel(res.confidence)) + '</span>' : "") +
         '</div>' +
         '<h3>' + esc(t("scanner.resultTitle")) + '</h3>' +
-        '<p class="small muted" style="margin-bottom:6px"><strong>' + esc(t("scanner.likelyFood")) + ':</strong> ' +
+
+        '<div class="status-banner status-banner--' + sm.cls + '">' +
+          bannerIcon(sm.cls) +
+          '<div><strong>' + esc(t(sm.key)) + '</strong>' +
+            (res.statusReason ? '<p class="small" style="margin:4px 0 0">' + esc(L(res.statusReason)) + '</p>' : "") +
+          '</div>' +
+        '</div>' +
+        '<p class="small muted" style="margin-top:10px">' + esc(t("scanner.visualStatusNote")) + '</p>' +
+
+        (stats ? '<p class="small muted" style="margin:14px 0 6px">' + esc(t("scanner.measured")) + '</p>' +
+          '<div class="photo-stats">' +
+          statBox(t("scanner.brightness"), stats.brightness, "%") +
+          statBox(t("scanner.contrast"), stats.contrast, "%") +
+          statBox(t("scanner.greenArea"), stats.greenPct != null ? stats.greenPct : "—", "%") +
+          statBox(t("scanner.brownArea"), stats.brownPct != null ? stats.brownPct : "—", "%") +
+        '</div>' : "") +
+
+        '<p class="small" style="margin-bottom:6px"><strong>' + esc(t("scanner.likelyFood")) + ':</strong> ' +
           (res.likelyFood ? esc(L(res.likelyFood)) : "—") + '</p>' +
         '<p class="small" style="margin-bottom:6px"><strong>' + esc(t("scanner.freshness")) + '</strong></p>' +
         '<ul class="small muted">' + (freshness || "<li>—</li>") + '</ul>' +
         (spoilage ? '<p class="small" style="margin-bottom:6px"><strong>' + esc(t("scanner.spoilage")) + '</strong></p><ul class="small muted">' + spoilage + '</ul>' : "") +
+
+        '<div class="checklist-card">' +
+          '<h4>' + esc(t("scanner.howToConfirm")) + '</h4>' +
+          '<ul class="check-list">' + checklist + '</ul>' +
+        '</div>' +
+
         '<p class="small" style="margin-bottom:6px"><strong>' + esc(t("scanner.storageRec")) + '</strong> ' + esc(L(res.storage)) + '</p>' +
         '<p class="small" style="margin-bottom:6px"><strong>' + esc(t("scanner.preservation")) + '</strong> ' + esc(L(res.preservation)) + '</p>' +
-        (stats ? '<hr class="hr">' +
-          '<p class="small" style="margin:0"><strong>' + esc(L({ en: "Local image measurement (computed in your browser)", hi: "स्थानीय छवि माप (आपके ब्राउज़र में गणना)" })) + ':</strong> ' +
-          esc(L({ en: "brightness", hi: "चमक" })) + " " + stats.brightness + "%, " +
-          esc(L({ en: "dominant tone", hi: "प्रमुख रंग" })) + " " + esc(stats.dominant) + '</p>' : "") +
+        '<p class="small muted" style="margin-top:12px">' + esc(t("scanner.estimateNote")) + '</p>' +
       '</div></div>';
 
     // If we could not determine the food, ask the user to confirm/select
